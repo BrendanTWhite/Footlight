@@ -1,0 +1,44 @@
+{
+    "levels": [
+        {
+            "name": "Village",
+            "npcs": [
+                {
+                    "classType": 0,
+                    "level": 10,
+                    "name": "Barry the Blacksmith"
+                },
+                {
+                    "classType": 0,
+                    "level": 6,
+                    "name": "Terry the Trader"
+                }
+            ]
+        },
+        {
+            "name": "Dungeon",
+            "npcs": [
+                {
+                    "classType": 1,
+                    "level": 19,
+                    "name": "Eric the Evil"
+                },
+                {
+                    "classType": 0,
+                    "level": 6,
+                    "name": "Eric's Left Minion"
+                },
+                {
+                    "classType": 0,
+                    "level": 5,
+                    "name": "Eric's Right Minion"
+                }
+            ]
+        }
+    ],
+    "player": {
+        "classType": 2,
+        "level": 19,
+        "name": "Hero"
+    }
+}

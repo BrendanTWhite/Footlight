@@ -1,0 +1,240 @@
+{
+  "$schema": "https://raw.githubusercontent.com/OpenLightingProject/open-fixture-library/schema-12.2.1/schemas/fixture.json",
+  "name": "MHLED 3618Z",
+  "categories": ["Moving Head", "Color Changer", "Dimmer"],
+  "meta": {
+    "authors": ["Brendan"],
+    "createDate": "2025-07-19",
+    "lastModifyDate": "2025-07-19"
+  },
+  "comment": "36*18W Rgbwauv 6in1 Multi Color DMX LED Moving Head Wash Light",
+  "links": {
+    "manual": [
+      "https://soundpro.by/upload/iblock/498/7iw3gnx18a204vk4i4kl9pw6ec2he9ne.pdf?srsltid=AfmBOopX111ELqMPbYqR69xudVrheOi6xlxZMtwl87ClSdK7oMQ8UHns"
+    ],
+    "productPage": [
+      "https://mslighting.en.made-in-china.com/product/DsxngeKAvfVr/China-36-18W-Rgbwauv-6in1-Multi-Color-DMX-LED-Moving-Head-Wash-Light.html"
+    ],
+    "video": [
+      "https://www.youtube.com/watch?v=KmTND0047OI"
+    ]
+  },
+  "physical": {
+    "power": 680,
+    "DMXconnector": "3-pin",
+    "bulb": {
+      "type": "LED"
+    },
+    "lens": {
+      "degreesMinMax": [10, 90]
+    }
+  },
+  "availableChannels": {
+    "Pan": {
+      "fineChannelAliases": ["Pan fine"],
+      "capability": {
+        "type": "Pan",
+        "angleStart": "0deg",
+        "angleEnd": "540deg"
+      }
+    },
+    "Tilt": {
+      "fineChannelAliases": ["Tilt fine"],
+      "capability": {
+        "type": "Tilt",
+        "angleStart": "0deg",
+        "angleEnd": "280deg"
+      }
+    },
+    "Zoom": {
+      "capability": {
+        "type": "Zoom",
+        "angleStart": "narrow",
+        "angleEnd": "wide"
+      }
+    },
+    "Strobe": {
+      "defaultValue": 0,
+      "capabilities": [
+        {
+          "dmxRange": [0, 9],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Open",
+          "comment": "On (Not Strobe)"
+        },
+        {
+          "dmxRange": [10, 59],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Strobe",
+          "speedStart": "slow",
+          "speedEnd": "fast"
+        },
+        {
+          "dmxRange": [60, 64],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Open",
+          "comment": "On (Not Strobe)"
+        },
+        {
+          "dmxRange": [65, 114],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Strobe",
+          "speedStart": "slow",
+          "speedEnd": "fast",
+          "randomTiming": true,
+          "comment": "Random Strobe"
+        },
+        {
+          "dmxRange": [115, 119],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Open",
+          "comment": "On (Not Strobe)"
+        },
+        {
+          "dmxRange": [120, 169],
+          "type": "ShutterStrobe",
+          "shutterEffect": "RampUp",
+          "speedStart": "slow",
+          "speedEnd": "fast",
+          "comment": "Gradual ON Strobe"
+        },
+        {
+          "dmxRange": [170, 174],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Open",
+          "comment": "On (Not Strobe)"
+        },
+        {
+          "dmxRange": [175, 224],
+          "type": "ShutterStrobe",
+          "shutterEffect": "RampDown",
+          "speedStart": "slow",
+          "speedEnd": "fast",
+          "comment": "Gradual Dark Strobe"
+        },
+        {
+          "dmxRange": [225, 234],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Open",
+          "comment": "On (Not Strobe)"
+        },
+        {
+          "dmxRange": [235, 244],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Closed",
+          "comment": "Not Strobe, close, Reset (After 3sec.)"
+        },
+        {
+          "dmxRange": [245, 255],
+          "type": "ShutterStrobe",
+          "shutterEffect": "Open",
+          "comment": "On (Not Strobe)"
+        }
+      ]
+    },
+    "Color": {
+      "defaultValue": 0,
+      "constant": true,
+      "capability": {
+        "type": "NoFunction",
+        "comment": "Not yet implemented"
+      }
+    },
+    "Dimmer": {
+      "defaultValue": "0%",
+      "highlightValue": "100%",
+      "capability": {
+        "type": "Intensity",
+        "brightnessStart": "0%",
+        "brightnessEnd": "100%"
+      }
+    },
+    "Red": {
+      "defaultValue": 0,
+      "capability": {
+        "type": "ColorIntensity",
+        "color": "Red"
+      }
+    },
+    "Green": {
+      "capability": {
+        "type": "ColorIntensity",
+        "color": "Green"
+      }
+    },
+    "Blue": {
+      "capability": {
+        "type": "ColorIntensity",
+        "color": "Blue"
+      }
+    },
+    "White": {
+      "highlightValue": "100%",
+      "capability": {
+        "type": "ColorIntensity",
+        "color": "White"
+      }
+    },
+    "Amber": {
+      "capability": {
+        "type": "ColorIntensity",
+        "color": "Amber"
+      }
+    },
+    "UV": {
+      "capability": {
+        "type": "ColorIntensity",
+        "color": "UV"
+      }
+    },
+    "Rainbow": {
+      "defaultValue": 0,
+      "constant": true,
+      "capability": {
+        "type": "NoFunction"
+      }
+    },
+    "Pan/Tilt Speed": {
+      "defaultValue": 0,
+      "capability": {
+        "type": "PanTiltSpeed",
+        "speedStart": "fast",
+        "speedEnd": "slow"
+      }
+    },
+    "Running Mode": {
+      "defaultValue": 0,
+      "capability": {
+        "type": "NoFunction"
+      }
+    }
+  },
+  "modes": [
+    {
+      "name": "17-channel",
+      "shortName": "17ch",
+      "channels": [
+        "Pan",
+        "Tilt",
+        "Zoom",
+        "Strobe",
+        "Color",
+        "Dimmer",
+        "Red",
+        "Green",
+        "Blue",
+        "White",
+        "Amber",
+        "UV",
+        "Rainbow",
+        "Pan fine",
+        "Tilt fine",
+        "Pan/Tilt Speed",
+        "Running Mode"
+      ]
+    }
+  ],
+  "fixtureKey": "mhled-3618z",
+  "manufacturerKey": "mslighting",
+  "oflURL": "https://open-fixture-library.org/mslighting/mhled-3618z"
+}
