@@ -7,13 +7,232 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>500</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Footlight - New Show</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="mainWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="fixturesGroupsSplitter">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <widget class="QWidget" name="">
+        <layout class="QVBoxLayout" name="fixturesLayout">
+         <item>
+          <layout class="QHBoxLayout" name="fixturesButtonLayout">
+           <item>
+            <widget class="QLabel" name="fixturesLabel">
+             <property name="text">
+              <string>Fixtures</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="fixturesButtonSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QToolButton" name="fixturesAddButton">
+             <property name="text">
+              <string>Add...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QListView" name="fixturesView">
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <layout class="QVBoxLayout" name="groupsLayout">
+         <item>
+          <layout class="QHBoxLayout" name="groupsButtonLayout">
+           <item>
+            <widget class="QLabel" name="groupsLabel">
+             <property name="text">
+              <string>Fixture Groups</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="groupsSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QToolButton" name="groupsAddButton">
+             <property name="text">
+              <string>Add...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTreeView" name="groupsView">
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="">
+       <layout class="QVBoxLayout" name="scenesLayout">
+        <item>
+         <layout class="QHBoxLayout" name="scenesButtonLayout">
+          <item>
+           <widget class="QLabel" name="scenesLabel">
+            <property name="text">
+             <string>Scenes</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="scenesButtonSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QToolButton" name="scenesAddButton">
+            <property name="text">
+             <string>Add...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTreeView" name="scenesView">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="">
+       <layout class="QVBoxLayout" name="cuesLayout">
+        <item>
+         <layout class="QHBoxLayout" name="cuesButtonLayout">
+          <item>
+           <widget class="QLabel" name="cuesLabel">
+            <property name="text">
+             <string>Cues</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="cuesButtonSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QToolButton" name="cuesAddButton">
+            <property name="text">
+             <string>Add...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QListView" name="cuesView">
+          <property name="alternatingRowColors">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="goButtonLayout">
+          <item>
+           <widget class="QToolButton" name="backButton">
+            <property name="text">
+             <string>Back</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="goButonSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QToolButton" name="goButton">
+            <property name="font">
+             <font>
+              <pointsize>30</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>GO</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -23,8 +242,327 @@
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAbout_Footlight"/>
+    <addaction name="separator"/>
+    <addaction name="actionPreferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="actionDelete"/>
+    <addaction name="actionSelect_All"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionShowFixtures"/>
+    <addaction name="actionShowGroups"/>
+    <addaction name="actionShowScenes"/>
+    <addaction name="actionShowCues"/>
+    <addaction name="separator"/>
+    <addaction name="actionLockWindow"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuBlah">
+    <property name="title">
+     <string>Blah</string>
+    </property>
+    <addaction name="actionBlah"/>
+    <addaction name="actionBlah_2"/>
+    <addaction name="actionBlah_3"/>
+   </widget>
+   <widget class="QMenu" name="menuBlah_2">
+    <property name="title">
+     <string>Blah</string>
+    </property>
+    <addaction name="actionBlah_4"/>
+    <addaction name="actionBlah_5"/>
+    <addaction name="actionBlah_6"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionasdfasdf_2"/>
+    <addaction name="actionwindow"/>
+    <addaction name="actionwindow_2"/>
+    <addaction name="actionwindow_3"/>
+    <addaction name="actionwindow_4"/>
+    <addaction name="actionwindow_5"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuBlah"/>
+   <addaction name="menuBlah_2"/>
+   <addaction name="menuView"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAbout_Footlight">
+   <property name="text">
+    <string>About Footlight</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="actionPreferences">
+   <property name="text">
+    <string>Settings...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+,</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="toolTip">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionSelect_All">
+   <property name="text">
+    <string>Select All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionBlah">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionBlah_2">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionBlah_3">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionBlah_4">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionBlah_5">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionBlah_6">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Backspace</string>
+   </property>
+  </action>
+  <action name="actionNew">
+   <property name="text">
+    <string>New Show</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open Show</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close Show</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save Show</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="text">
+    <string>Save Show As...</string>
+   </property>
+  </action>
+  <action name="actionShowFixtures">
+   <property name="text">
+    <string>Show Fixtures</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+1</string>
+   </property>
+  </action>
+  <action name="actionasdfasdf_2">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+   <property name="toolTip">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Footlight Help</string>
+   </property>
+  </action>
+  <action name="actionShowGroups">
+   <property name="text">
+    <string>Show Groups</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+2</string>
+   </property>
+  </action>
+  <action name="actionShowScenes">
+   <property name="text">
+    <string>Show Scenes</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+3</string>
+   </property>
+  </action>
+  <action name="actionShowCues">
+   <property name="text">
+    <string>Show Cues</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+4</string>
+   </property>
+  </action>
+  <action name="actionLockWindow">
+   <property name="text">
+    <string>Lock Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionwindow">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+   <property name="toolTip">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionwindow_2">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+   <property name="toolTip">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionwindow_3">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+   <property name="toolTip">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionwindow_4">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+   <property name="toolTip">
+    <string>Blah</string>
+   </property>
+  </action>
+  <action name="actionwindow_5">
+   <property name="text">
+    <string>Blah</string>
+   </property>
+   <property name="toolTip">
+    <string>Blah</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
