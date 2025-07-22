@@ -14,16 +14,16 @@ private:
 public:
     Fixture(int universe, int channel, QString name);
 
-    int getId();              // getter for ID
+    int id() const;
 
-    int getUniverse();              // getter for universe
-    void setUniverse(int universe);    // setter for universe
+    QString name() const;
+    void setName(const QString &newName);
 
-    int getChannel();               // getter for channel
-    void setChannel(int channel);       // setter for channel
+    int universe() const;
+    void setUniverse(int newUniverse);
 
-    QString getName();            // getter for name
-    void setName(QString name);     // setter for name
+    int channel() const;
+    void setChannel(int newChannel);
 };
 
 #endif // FIXTURE_H

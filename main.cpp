@@ -25,10 +25,10 @@ int main(int argc, char *argv[])
 
     Fixture f = Fixture{1,2,"Fred"};
 
-    qDebug() << "Fixture" << f.getName()
-            << "is in Universe" << f.getUniverse()
-            << " at Channel" << f.getChannel()
-            << "and has ID" << f.getId();
+    qDebug() << "Fixture" << f.name()
+             << "is in Universe" << f.universe()
+             << "at Channel" << f.channel()
+             << "and has ID" << f.id();
 
 
 
