@@ -1,8 +1,11 @@
 #include "mainwindow.h"
 
+#include "fixture.h"
+
 #include <QApplication>
 #include <QLocale>
 #include <QTranslator>
+#include <QtDebug>
 
 int main(int argc, char *argv[])
 {
@@ -19,5 +22,15 @@ int main(int argc, char *argv[])
     }
     MainWindow w;
     w.show();
+
+    Fixture f = Fixture{1,2,"Fred"};
+
+    qDebug() << "Fixture" << f.getName()
+            << "is in Universe" << f.getUniverse()
+            << " at Channel" << f.getChannel()
+            << "and has ID" << f.getId();
+
+
+
     return a.exec();
 }

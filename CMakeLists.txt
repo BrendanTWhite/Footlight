@@ -11,6 +11,8 @@ qt_add_executable(Footlight
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    fixture.h
+    fixture.cpp
 )
 
 qt_add_translations(
