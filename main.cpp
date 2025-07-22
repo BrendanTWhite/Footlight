@@ -23,12 +23,23 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    Fixture f = Fixture{1,2,"Fred"};
 
-    qDebug() << "Fixture" << f.name()
-             << "is in Universe" << f.universe()
-             << "at Channel" << f.channel()
-             << "and has ID" << f.id();
+
+    Fixture f1 = Fixture{1,1,"Fred"};
+    Fixture f2 = Fixture{1,2,"George"};
+    Fixture f3 = Fixture{1,3,"Tom"};
+    Fixture f4 = Fixture{1,4,"Dick"};
+    Fixture f5 = Fixture{1,5,"Harry"};
+
+    qDebug() << "Fixture" << f1.name()
+             << "is in Universe" << f1.universe()
+             << "at Channel" << f1.channel()
+             << "and has ID" << f1.id();
+
+    qDebug() << "Fixture" << f5.name()
+             << "is in Universe" << f5.universe()
+             << "at Channel" << f5.channel()
+             << "and has ID" << f5.id();
 
 
 
