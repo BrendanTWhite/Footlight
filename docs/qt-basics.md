@@ -1,6 +1,6 @@
 # Qt Basics
 
-## C++ / Qt
+## C++ / Qt / Widgets
 
 Best for:
 - Standard industry type apps
