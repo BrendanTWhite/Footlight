@@ -239,7 +239,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>36</height>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -282,11 +282,11 @@
     <addaction name="actionLockWindow"/>
     <addaction name="separator"/>
    </widget>
-   <widget class="QMenu" name="menuBlah">
+   <widget class="QMenu" name="menuDMX">
     <property name="title">
-     <string>Blah</string>
+     <string>DMX</string>
     </property>
-    <addaction name="actionBlah"/>
+    <addaction name="actionUniverses"/>
     <addaction name="actionBlah_2"/>
     <addaction name="actionBlah_3"/>
    </widget>
@@ -318,7 +318,7 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
-   <addaction name="menuBlah"/>
+   <addaction name="menuDMX"/>
    <addaction name="menuBlah_2"/>
    <addaction name="menuView"/>
    <addaction name="menuWindow"/>
@@ -395,9 +395,9 @@
     <string>Ctrl+A</string>
    </property>
   </action>
-  <action name="actionBlah">
+  <action name="actionUniverses">
    <property name="text">
-    <string>Blah</string>
+    <string>Universes...</string>
    </property>
   </action>
   <action name="actionBlah_2">
