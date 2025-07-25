@@ -16,8 +16,9 @@ Show {
 Show ||--o{ Fixture : contains
 
 Fixture {
-    int dmxAddress
     string name
+    string bar
+    int dmxAddress
 }
 
 Fixture }o--|| FixtureType : "is of type"
@@ -49,7 +50,7 @@ GroupItem {
 
 Show ||--o{ Scene : contains
 Scene {
-    int id
+    string code
     string name
 }
 
@@ -66,10 +67,10 @@ SceneItem {
 Show ||--o{ Cue : contains
 Cue {
     int seq
+    double id
     Scene scene
     string cueText
     int delay
     int fade
 }
-
 ```
