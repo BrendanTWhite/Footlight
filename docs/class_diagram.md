@@ -12,48 +12,40 @@ Show {
     bool dirty
 }
 
+Show ||--o{ Universe : contains
+Universe {
+    string name
+    obj connection
+}
+
+Show ||--o{ FixtureType : contains
+FixtureType {
+    string name
+    array channels
+}
 
 Show ||--o{ Fixture : contains
-
 Fixture {
     string name
     string bar
     int dmxAddress
 }
 
-Fixture }o--|| FixtureType : "is of type"
-FixtureType {
-    string name
-    array channels
-}
-
-Fixture }o--|| Universe : "is on"
-Universe {
-    string name
-    obj connection
-}
-
-
 Show ||--o{ FixtureGroup : contains
-
 FixtureGroup {
     string name
 }
-
-
 FixtureGroup ||--o{ GroupItem : contains
 GroupItem {
     int sequence
     ptr fixture
 }
 
-
 Show ||--o{ Scene : contains
 Scene {
     string code
     string name
 }
-
 Scene ||--o{ SceneItem : "contains"
 SceneItem {
     enum sceneItemType
@@ -62,7 +54,6 @@ SceneItem {
     ptr scene
     array channelValues
 }
-
 
 Show ||--o{ Cue : contains
 Cue {
