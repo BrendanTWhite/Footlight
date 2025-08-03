@@ -1,6 +1,6 @@
-# Class Diagram
+# Ownership Diagram
 
-Class Diagram for main Footlight structures
+Object Ownership Diagram for main Footlight structures
 
 ```mermaid
 erDiagram
@@ -29,6 +29,8 @@ Fixture {
     string name
     string bar
     int dmxAddress
+    ptr fixtureType
+    ptr universe
 }
 
 Show ||--o{ FixtureGroup : contains
