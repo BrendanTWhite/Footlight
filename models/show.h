@@ -1,6 +1,7 @@
 #ifndef SHOW_H
 #define SHOW_H
 
+#include <QtDebug>
 #include <QString>
 #include <QObject>
 
@@ -10,6 +11,7 @@ class Show : public QObject
 
 public:
     explicit Show(QObject *parent, QString name);
+    ~Show();
 
     int id() const;
 

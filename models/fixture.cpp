@@ -44,3 +44,8 @@ Fixture::Fixture(Show *parent, int universe, int channel, QString name)
     m_channel = channel;
     m_name = name;
 }
+
+Fixture::~Fixture()
+{
+    qDebug() << "Deconstructing Fixture " << this->m_name;
+}

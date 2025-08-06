@@ -1,6 +1,7 @@
 #ifndef FIXTUREGROUP_H
 #define FIXTUREGROUP_H
 
+#include <QtDebug>
 #include <QObject>
 #include <QString>
 
@@ -12,6 +13,7 @@ class FixtureGroup : public QObject
 
 public:
     explicit FixtureGroup(Show *parent, QString name );
+    ~FixtureGroup();
 
     int id() const;
 

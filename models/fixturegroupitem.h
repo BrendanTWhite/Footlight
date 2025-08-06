@@ -1,6 +1,7 @@
 #ifndef FIXTUREGROUPITEM_H
 #define FIXTUREGROUPITEM_H
 
+#include <QtDebug>
 #include <QObject>
 #include <QString>
 
@@ -14,6 +15,7 @@ class FixtureGroupItem : public QObject
 
 public:
     explicit FixtureGroupItem(FixtureGroup *parent);
+    ~FixtureGroupItem();
 
 signals:
 };

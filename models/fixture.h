@@ -1,6 +1,7 @@
 #ifndef FIXTURE_H
 #define FIXTURE_H
 
+#include <QtDebug>
 #include <QString>
 #include <QObject>
 
@@ -12,6 +13,7 @@ class Fixture : public QObject
 
 public:
     explicit Fixture(Show *parent, int universe, int channel, QString name);
+    ~Fixture();
 
     int id() const;
 

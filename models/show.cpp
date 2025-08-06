@@ -7,6 +7,11 @@ Show::Show(QObject *parent, QString name)
     m_name = name;
 }
 
+Show::~Show()
+{
+    qDebug() << "Deconstructing Show " << this->m_name;
+}
+
 int Show::id() const
 {
     return m_id;

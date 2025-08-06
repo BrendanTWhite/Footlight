@@ -7,6 +7,11 @@ FixtureGroup::FixtureGroup(Show *parent, QString name)
     m_name = name;
 }
 
+FixtureGroup::~FixtureGroup()
+{
+    qDebug() << "Deconstructing FixtureGroup " << this->m_name;
+}
+
 int FixtureGroup::id() const
 {
     return m_id;

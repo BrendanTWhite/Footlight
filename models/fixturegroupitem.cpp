@@ -5,3 +5,9 @@ FixtureGroupItem::FixtureGroupItem(FixtureGroup *parent)
 {
 
 }
+
+FixtureGroupItem::~FixtureGroupItem()
+{
+    // qDebug() << "Deconstructing FixtureGroupItem " << this->m_name;
+    qDebug() << "Deconstructing FixtureGroupItem INSERT NAME HERE ";
+}
