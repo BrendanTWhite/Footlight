@@ -17,6 +17,7 @@ project(${HF_APP_NAME} LANGUAGES CXX DESCRIPTION "${HF_APP_DESCRIPTION}" VERSION
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 find_package(Qt6 REQUIRED COMPONENTS Core)
 find_package(Qt6 REQUIRED COMPONENTS Core)
+find_package(Qt6 REQUIRED COMPONENTS Core)
 
 qt_standard_project_setup()
 
@@ -26,11 +27,12 @@ qt_add_executable(Footlight
     main.cpp
 
     mainwindow.ui
-    mainwindow.h          mainwindow.cpp
+    mainwindow.h                mainwindow.cpp
 
-    models/show.h         models/show.cpp
-    models/fixture.h      models/fixture.cpp
-    models/fixturegroup.h models/fixturegroup.cpp
+    models/show.h               models/show.cpp
+    models/fixture.h            models/fixture.cpp
+    models/fixturegroup.h       models/fixturegroup.cpp
+    models/fixturegroupitem.h   models/fixturegroupitem.cpp
 
 )
 
@@ -44,6 +46,7 @@ target_link_libraries(Footlight
         Qt::Core
         Qt::Widgets
 )
+target_link_libraries(Footlight PRIVATE Qt6::Core)
 target_link_libraries(Footlight PRIVATE Qt6::Core)
 target_link_libraries(Footlight PRIVATE Qt6::Core)
 

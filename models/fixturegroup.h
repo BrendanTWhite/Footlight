@@ -1,8 +1,8 @@
 #ifndef FIXTUREGROUP_H
 #define FIXTUREGROUP_H
 
-#include <QString>
 #include <QObject>
+#include <QString>
 
 #include "show.h"
 

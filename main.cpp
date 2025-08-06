@@ -71,6 +71,11 @@ int main(int argc, char *argv[])
     Fixture f4 = Fixture{&show,1,4,"Dick"};
     Fixture f5 = Fixture{&show,1,5,"Harry"};
 
+    FixtureGroup fg1 = FixtureGroup{&show,"Basil"};
+    FixtureGroup fg2 = FixtureGroup{&show,"Sybil"};
+    FixtureGroup fg3 = FixtureGroup{&show,"Polly"};
+
+
     qDebug() << "----------------------------------- ";
 
     qDebug() << "Show" << show.name()
@@ -85,6 +90,15 @@ int main(int argc, char *argv[])
              << "is in Universe" << f5.universe()
              << "at Channel" << f5.channel()
              << "and has ID" << f5.id();
+
+    qDebug() << "FixtureGroup" << fg1.name()
+             << "has ID" << fg1.id();
+
+    qDebug() << "FixtureGroup" << fg2.name()
+             << "has ID" << fg2.id();
+
+    qDebug() << "FixtureGroup" << fg2.name()
+             << "has ID" << fg2.id();
 
 
 
