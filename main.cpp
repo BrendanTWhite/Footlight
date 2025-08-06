@@ -62,46 +62,48 @@ int main(int argc, char *argv[])
 
 
     // create a dummy show
-    Show show = Show{&a,"Godot Finally Arrives"};
+    Show* show = new Show{&a,"Godot Finally Arrives"};
 
-    // create some dummy fixtures
-    Fixture f1 = Fixture{&show,1,1,"Fred"};
-    Fixture f2 = Fixture{&show,1,2,"George"};
-    Fixture f3 = Fixture{&show,1,3,"Tom"};
-    Fixture f4 = Fixture{&show,1,4,"Dick"};
-    Fixture f5 = Fixture{&show,1,5,"Harry"};
+    qDebug() << "----------------------------------- ";
+    qDebug() << "Show" << show->name()
+             << "has ID" << show->id();
 
-    FixtureGroup fg1 = FixtureGroup{&show,"Basil"};
-    FixtureGroup fg2 = FixtureGroup{&show,"Sybil"};
-    FixtureGroup fg3 = FixtureGroup{&show,"Polly"};
+    // Create a QList of fixtures
+    QList<Fixture*> fixtures = {
+        new Fixture{show,1,1,"Fred"},
+        new Fixture{show,1,2,"George"},
+        new Fixture{show,1,3,"Tom"},
+        new Fixture{show,1,4,"Dick"},
+        new Fixture{show,1,5,"Harry"}
+    };
+
+    qDebug() << "----------------------------------- ";
+    for (const auto &fixture : fixtures) {
+        qDebug() << "Fixture" << fixture->name()
+        << "is in Universe" << fixture->universe()
+        << "at Channel" << fixture->channel()
+        << "and has ID" << fixture->id();
+    }
+
+    // Create a QList of Fixture Groups
+    QList<FixtureGroup*> fixtureGroups = {
+        new FixtureGroup{show,"Basil"},
+        new FixtureGroup{show,"Sybil"},
+        new FixtureGroup{show,"Polly"}
+    };
+
+    qDebug() << "----------------------------------- ";
+    for (const auto &fixtureGroup : fixtureGroups) {
+        qDebug() << "FixtureGroup" << fixtureGroup->name()
+            << "has ID" << fixtureGroup->id();
+
+    }
+
+
+
 
 
     qDebug() << "----------------------------------- ";
-
-    qDebug() << "Show" << show.name()
-             << "has ID" << show.id();
-
-    qDebug() << "Fixture" << f1.name()
-             << "is in Universe" << f1.universe()
-             << "at Channel" << f1.channel()
-             << "and has ID" << f1.id();
-
-    qDebug() << "Fixture" << f5.name()
-             << "is in Universe" << f5.universe()
-             << "at Channel" << f5.channel()
-             << "and has ID" << f5.id();
-
-    qDebug() << "FixtureGroup" << fg1.name()
-             << "has ID" << fg1.id();
-
-    qDebug() << "FixtureGroup" << fg2.name()
-             << "has ID" << fg2.id();
-
-    qDebug() << "FixtureGroup" << fg2.name()
-             << "has ID" << fg2.id();
-
-
-
     MainWindow w;
     w.show();
     return a.exec();
