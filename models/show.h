@@ -4,22 +4,23 @@
 #include <QtDebug>
 #include <QString>
 #include <QObject>
+#include <atomic>
 
 class Show : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Show(QObject *parent, QString name);
+    explicit Show(QObject *parent, QString name, long override_id = 1);
     ~Show();
 
-    int id() const;
+    long id() const;
 
     QString name() const;
     void setName(const QString &newName);
 
 private:
-    int m_id;
+    long m_id;
     QString m_name;
 
 signals:

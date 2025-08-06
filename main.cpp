@@ -65,24 +65,23 @@ int main(int argc, char *argv[])
     Show* show = new Show{&a,"Godot Finally Arrives"};
 
     qDebug() << "----------------------------------- ";
-    qDebug() << "Show" << show->name()
-             << "has ID" << show->id();
+    qDebug() << "Show" << show->id() << show->name();
 
     // Create a QList of fixtures
     QList<Fixture*> fixtures = {
         new Fixture{show,1,1,"Fred"},
         new Fixture{show,1,2,"George"},
-        new Fixture{show,1,3,"Tom"},
+        new Fixture{show,1,3,"Tom", 9},
         new Fixture{show,1,4,"Dick"},
         new Fixture{show,1,5,"Harry"}
     };
 
     qDebug() << "----------------------------------- ";
     for (const auto &fixture : fixtures) {
-        qDebug() << "Fixture" << fixture->name()
-        << "is in Universe" << fixture->universe()
-        << "at Channel" << fixture->channel()
-        << "and has ID" << fixture->id();
+        qDebug() << "Fixture" << fixture->id()
+        << "U" << fixture->universe()
+        << "dmx" << fixture->channel()
+        << fixture->name();
     }
 
     // Create a QList of Fixture Groups
@@ -94,9 +93,7 @@ int main(int argc, char *argv[])
 
     qDebug() << "----------------------------------- ";
     for (const auto &fixtureGroup : fixtureGroups) {
-        qDebug() << "FixtureGroup" << fixtureGroup->name()
-            << "has ID" << fixtureGroup->id();
-
+        qDebug() << "FixtureGroup"  << fixtureGroup->id() << fixtureGroup->name();
     }
 
 

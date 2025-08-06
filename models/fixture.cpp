@@ -1,6 +1,6 @@
 #include "fixture.h"
 
-int Fixture::id() const
+long Fixture::id() const
 {
     return m_id;
 }
@@ -36,10 +36,16 @@ void Fixture::setChannel(int newChannel)
 }
 
 
-Fixture::Fixture(Show *parent, int universe, int channel, QString name)
+Fixture::Fixture(Show *parent, int universe, int channel, QString name, long override_id)
     : QObject{parent}
 {
-    m_id = 1234;
+    static std::atomic_long m_next_id = 1;
+
+    if (override_id > 0) {
+        m_next_id = override_id;
+    }
+
+    m_id = m_next_id++;
     m_universe = universe;
     m_channel = channel;
     m_name = name;
@@ -47,5 +53,5 @@ Fixture::Fixture(Show *parent, int universe, int channel, QString name)
 
 Fixture::~Fixture()
 {
-    qDebug() << "Deconstructing Fixture " << this->m_name;
+    qDebug() << "~ Fixture" << this->m_id << this->m_name;
 }

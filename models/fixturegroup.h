@@ -4,6 +4,7 @@
 #include <QtDebug>
 #include <QObject>
 #include <QString>
+#include <atomic>
 
 #include "show.h"
 
@@ -12,16 +13,16 @@ class FixtureGroup : public QObject
     Q_OBJECT
 
 public:
-    explicit FixtureGroup(Show *parent, QString name );
+    explicit FixtureGroup(Show *parent, QString name, long override_id = 1 );
     ~FixtureGroup();
 
-    int id() const;
+    long id() const;
 
     QString name() const;
     void setName(const QString &newName);
 
 private:
-    int m_id;
+    long m_id;
     QString m_name;
 
 signals:

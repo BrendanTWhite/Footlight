@@ -1,18 +1,24 @@
 #include "show.h"
 
-Show::Show(QObject *parent, QString name)
+Show::Show(QObject *parent, QString name, long override_id)
     : QObject{parent}
 {
-    m_id = 3456;
+    static std::atomic_long m_next_id = 1;
+
+    if (override_id > 0) {
+        m_next_id = override_id;
+    }
+
+    m_id = m_next_id++;
     m_name = name;
 }
 
 Show::~Show()
 {
-    qDebug() << "Deconstructing Show " << this->m_name;
+    qDebug() << "~ Show" << this->m_id << this->m_name;
 }
 
-int Show::id() const
+long Show::id() const
 {
     return m_id;
 }

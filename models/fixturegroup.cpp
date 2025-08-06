@@ -1,18 +1,24 @@
 #include "fixturegroup.h"
 
-FixtureGroup::FixtureGroup(Show *parent, QString name)
+FixtureGroup::FixtureGroup(Show *parent, QString name, long override_id)
     : QObject{parent}
 {
-    m_id = 2345;
+    static std::atomic_long m_next_id = 1;
+
+    if (override_id > 0) {
+        m_next_id = override_id;
+    }
+
+    m_id = m_next_id++;
     m_name = name;
 }
 
 FixtureGroup::~FixtureGroup()
 {
-    qDebug() << "Deconstructing FixtureGroup " << this->m_name;
+    qDebug() << "~ FixtureGroup" << this->m_id << this->m_name;
 }
 
-int FixtureGroup::id() const
+long FixtureGroup::id() const
 {
     return m_id;
 }
