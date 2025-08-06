@@ -2,14 +2,11 @@
 #define FIXTURE_H
 
 #include <QString>
+#include <QObject>
 
-class Fixture
+class Fixture : public QObject
 {
-private:
-    int m_id;
-    QString m_name;
-    int m_universe;
-    int m_channel;
+    Q_OBJECT
 
 public:
     Fixture(int universe, int channel, QString name);
@@ -24,6 +21,14 @@ public:
 
     int channel() const;
     void setChannel(int newChannel);
+
+
+private:
+    int m_id;
+    QString m_name;
+    int m_universe;
+    int m_channel;
+
 };
 
 #endif // FIXTURE_H

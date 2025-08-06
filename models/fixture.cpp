@@ -1,5 +1,7 @@
 #include "fixture.h"
 
+#include <QObject>
+
 #include <QtDebug>
 #include <QString>
 

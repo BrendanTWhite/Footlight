@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 
-#include "fixture.h"
+#include "models/fixture.h"
 
 #include <QApplication>
 #include <QLocale>
