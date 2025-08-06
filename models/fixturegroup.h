@@ -13,7 +13,7 @@ class FixtureGroup : public QObject
     Q_OBJECT
 
 public:
-    explicit FixtureGroup(Show *parent, QString name, long override_id = 1 );
+    explicit FixtureGroup(Show *parent, QString name, long override_id = NULL);
     ~FixtureGroup();
 
     long id() const;

@@ -5,7 +5,7 @@ Show::Show(QObject *parent, QString name, long override_id)
 {
     static std::atomic_long m_next_id = 1;
 
-    if (override_id > 0) {
+    if (override_id) {
         m_next_id = override_id;
     }
 

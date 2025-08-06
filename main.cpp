@@ -63,9 +63,11 @@ int main(int argc, char *argv[])
 
     // create a dummy show
     Show* show = new Show{&a,"Godot Finally Arrives"};
+    Show* show2 = new Show{&a,"Romeo & Juliet"};
 
     qDebug() << "----------------------------------- ";
     qDebug() << "Show" << show->id() << show->name();
+    qDebug() << "Show" << show2->id() << show2->name();
 
     // Create a QList of fixtures
     QList<Fixture*> fixtures = {

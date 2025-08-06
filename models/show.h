@@ -11,7 +11,7 @@ class Show : public QObject
     Q_OBJECT
 
 public:
-    explicit Show(QObject *parent, QString name, long override_id = 1);
+    explicit Show(QObject *parent, QString name, long override_id = NULL);
     ~Show();
 
     long id() const;

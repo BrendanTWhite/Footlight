@@ -13,7 +13,7 @@ class Fixture : public QObject
     Q_OBJECT
 
 public:
-    explicit Fixture(Show *parent, int universe, int channel, QString name, long override_id = 0);
+    explicit Fixture(Show *parent, int universe, int channel, QString name, long override_id = NULL);
     ~Fixture();
 
     long id() const;
