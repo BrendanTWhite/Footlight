@@ -22,13 +22,16 @@ qt_standard_project_setup()
 
 qt_add_executable(Footlight
     WIN32 MACOSX_BUNDLE
-    main.cpp
-    mainwindow.ui
 
+    main.cpp
+
+    mainwindow.ui
     mainwindow.h          mainwindow.cpp
+
+    models/show.h         models/show.cpp
     models/fixture.h      models/fixture.cpp
     models/fixturegroup.h models/fixturegroup.cpp
-    models/show.h         models/show.cpp
+
 )
 
 qt_add_translations(

@@ -1,10 +1,5 @@
 #include "fixture.h"
 
-#include <QObject>
-
-#include <QtDebug>
-#include <QString>
-
 int Fixture::id() const
 {
     return m_id;
@@ -40,7 +35,10 @@ void Fixture::setChannel(int newChannel)
     m_channel = newChannel;
 }
 
-Fixture::Fixture(int universe, int channel, QString name) {
+
+Fixture::Fixture(Show *parent, int universe, int channel, QString name)
+    : QObject{parent}
+{
     m_id = 1234;
     m_universe = universe;
     m_channel = channel;

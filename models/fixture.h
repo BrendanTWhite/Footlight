@@ -4,12 +4,14 @@
 #include <QString>
 #include <QObject>
 
+#include "show.h"
+
 class Fixture : public QObject
 {
     Q_OBJECT
 
 public:
-    Fixture(int universe, int channel, QString name);
+    explicit Fixture(Show *parent, int universe, int channel, QString name);
 
     int id() const;
 
