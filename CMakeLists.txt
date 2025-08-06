@@ -15,9 +15,6 @@ cmake_minimum_required(VERSION 3.19)
 project(${HF_APP_NAME} LANGUAGES CXX DESCRIPTION "${HF_APP_DESCRIPTION}" VERSION ${HF_APP_VERSION})
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
-find_package(Qt6 REQUIRED COMPONENTS Core)
-find_package(Qt6 REQUIRED COMPONENTS Core)
-find_package(Qt6 REQUIRED COMPONENTS Core)
 
 qt_standard_project_setup()
 
@@ -46,9 +43,6 @@ target_link_libraries(Footlight
         Qt::Core
         Qt::Widgets
 )
-target_link_libraries(Footlight PRIVATE Qt6::Core)
-target_link_libraries(Footlight PRIVATE Qt6::Core)
-target_link_libraries(Footlight PRIVATE Qt6::Core)
 
 include(GNUInstallDirs)
 
