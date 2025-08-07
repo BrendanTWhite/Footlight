@@ -9,6 +9,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QtDebug>
+#include <QPointer>
 
 int main(int argc, char *argv[])
 {
@@ -63,8 +64,8 @@ int main(int argc, char *argv[])
 
 
     // create a dummy show
-    Show *show = new Show{&a, "Godot Finally Arrives"};
-    Show *show2 = new Show{&a, "Romeo & Juliet"};
+    QPointer<Show> show = new Show{&a, "Godot Finally Arrives"};
+    QPointer<Show> show2 = new Show{&a, "Romeo & Juliet"};
 
     qDebug() << "----------------------------------- ";
     qDebug() << "Show" << show->id() << show->name();
@@ -100,12 +101,12 @@ int main(int argc, char *argv[])
     }
 
     // Put fixtures in the groups
-    FixtureGroup* fg = new FixtureGroup{show, "my fixture group"};
-    Fixture* f = new Fixture{show, 0, 0, "my fixture"};
+    QPointer<FixtureGroup> fg = new FixtureGroup{show, "my fixture group"};
+    QPointer<Fixture> f = new Fixture{show, 0, 0, "my fixture"};
     qDebug() << "Fixture" << f->id() << "U" << f->universe() << "dmx" << f->channel() << f->name();
     qDebug() << "FixtureGroup" << fg->id() << fg->name();
 
-    FixtureGroupItem* fgi = new FixtureGroupItem(fg, f);
+    QPointer<FixtureGroupItem> fgi = new FixtureGroupItem(fg, f);
     qDebug() << "FGI FG:" << fgi->fixtureGroupName()
              << "F: " << fgi->fixtureName();
 
