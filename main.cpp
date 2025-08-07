@@ -1,4 +1,4 @@
-#include "ui/mainwindow.h"
+#include "ui/showwindow.h"
 #include "ui/neworopenwindow.h"
 
 #include "models/show.h"
