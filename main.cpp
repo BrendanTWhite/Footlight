@@ -100,6 +100,7 @@ int main(int argc, char *argv[])
         qDebug() << "FixtureGroup" << fixtureGroup->id() << fixtureGroup->name();
     }
 
+    qDebug() << "----------------------------------- ";
     // Put fixtures in the groups
     QPointer<FixtureGroup> fg = new FixtureGroup{show, "my fixture group"};
     QPointer<Fixture> f = new Fixture{show, 0, 0, "my fixture"};
