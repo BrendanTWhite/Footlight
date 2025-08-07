@@ -3,6 +3,7 @@
 #include "models/show.h"
 #include "models/fixture.h"
 #include "models/fixturegroup.h"
+#include "models/fixturegroupitem.h"
 
 #include <QApplication>
 #include <QLocale>
@@ -62,8 +63,8 @@ int main(int argc, char *argv[])
 
 
     // create a dummy show
-    Show* show = new Show{&a,"Godot Finally Arrives"};
-    Show* show2 = new Show{&a,"Romeo & Juliet"};
+    Show *show = new Show{&a, "Godot Finally Arrives"};
+    Show *show2 = new Show{&a, "Romeo & Juliet"};
 
     qDebug() << "----------------------------------- ";
     qDebug() << "Show" << show->id() << show->name();
@@ -71,19 +72,19 @@ int main(int argc, char *argv[])
 
     // Create a QList of fixtures
     QList<Fixture*> fixtures = {
-        new Fixture{show,1,1,"Fred"},
-        new Fixture{show,1,2,"George"},
-        new Fixture{show,1,3,"Tom", 9},
-        new Fixture{show,1,4,"Dick"},
-        new Fixture{show,1,5,"Harry"}
+         new Fixture{show, 1, 1, "Fred"},
+         new Fixture{show, 1, 2, "George"},
+         new Fixture{show, 1, 3, "Tom", 9},
+         new Fixture{show, 1, 4, "Dick"},
+         new Fixture{show, 1, 5, "Harry"}
     };
 
     qDebug() << "----------------------------------- ";
     for (const auto &fixture : fixtures) {
         qDebug() << "Fixture" << fixture->id()
-        << "U" << fixture->universe()
-        << "dmx" << fixture->channel()
-        << fixture->name();
+                 << "U" << fixture->universe()
+                 << "dmx" << fixture->channel()
+                 << fixture->name();
     }
 
     // Create a QList of Fixture Groups
@@ -95,14 +96,21 @@ int main(int argc, char *argv[])
 
     qDebug() << "----------------------------------- ";
     for (const auto &fixtureGroup : fixtureGroups) {
-        qDebug() << "FixtureGroup"  << fixtureGroup->id() << fixtureGroup->name();
+        qDebug() << "FixtureGroup" << fixtureGroup->id() << fixtureGroup->name();
     }
 
+    // Put fixtures in the groups
+    FixtureGroup* fg = new FixtureGroup{show, "my fixture group"};
+    Fixture* f = new Fixture{show, 0, 0, "my fixture"};
+    qDebug() << "Fixture" << f->id() << "U" << f->universe() << "dmx" << f->channel() << f->name();
+    qDebug() << "FixtureGroup" << fg->id() << fg->name();
 
-
-
+    FixtureGroupItem* fgi = new FixtureGroupItem(show, fg, f);
+    qDebug() << "FGI FG:" << fgi->fixtureGroupName()
+             << "F: " << fgi->fixtureName();
 
     qDebug() << "----------------------------------- ";
+
     MainWindow w;
     w.show();
     return a.exec();

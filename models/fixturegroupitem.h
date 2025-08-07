@@ -15,9 +15,11 @@ class FixtureGroupItem : public QObject
     Q_OBJECT
 
 public:
-    // explicit FixtureGroupItem(FixtureGroup *parent, Fixture *fixture);
-    explicit FixtureGroupItem(FixtureGroup *parent);
+    explicit FixtureGroupItem(Show *parent, FixtureGroup *fg, Fixture *f);
     ~FixtureGroupItem();
+
+    QString fixtureGroupName();
+    QString fixtureName();
 
     long id() const;
 
@@ -29,7 +31,9 @@ public:
 private:
     long m_id;
     QString m_name;
-    Fixture* m_fixture;
+    // QPointer<Fixture> m_fixture = nullptr;
+    Fixture *m_fixture;
+    FixtureGroup *m_fixturegroup;
 
 signals:
 };
