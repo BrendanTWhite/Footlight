@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "ui/mainwindow.h"
 #include "ui/neworopenwindow.h"
 
 #include "models/show.h"
@@ -114,7 +114,7 @@ int main(int argc, char *argv[])
 
     qDebug() << "----------------------------------- ";
 
-    NewOrOpenWindow w;
+    MainWindow w;
     w.show();
 
     return a.exec();
