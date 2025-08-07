@@ -17,7 +17,7 @@ QString FixtureGroupItem::fixtureGroupName()
     if (this->m_fixturegroup) {
         return this->m_fixturegroup->name();
     } else {
-        return "NO FG";
+        return "Can't find that fixture group";
     }
 }
 
