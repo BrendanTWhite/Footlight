@@ -114,9 +114,10 @@ int main(int argc, char *argv[])
 
     qDebug() << "----------------------------------- ";
 
-    // ShowWindow w;
-    NewOrOpenWindow w;
-    w.show();
+    ShowWindow sw;
+    NewOrOpenWindow nw;
+    sw.show();
+    nw.show();
 
     return a.exec();
 }
