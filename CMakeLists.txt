@@ -31,6 +31,8 @@ qt_add_executable(Footlight
     models/fixturegroup.h       models/fixturegroup.cpp
     models/fixturegroupitem.h   models/fixturegroupitem.cpp
 
+    ui/neworopenwindow.h        ui/neworopenwindow.cpp  ui/neworopenwindow.ui
+
 )
 
 qt_add_translations(

@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "ui/neworopenwindow.h"
 
 #include "models/show.h"
 #include "models/fixture.h"
@@ -113,7 +114,8 @@ int main(int argc, char *argv[])
 
     qDebug() << "----------------------------------- ";
 
-    MainWindow w;
+    NewOrOpenWindow w;
     w.show();
+
     return a.exec();
 }
