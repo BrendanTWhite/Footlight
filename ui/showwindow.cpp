@@ -1,14 +1,14 @@
 #include "showwindow.h"
 #include "ui_showwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+ShowWindow::ShowWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::ShowWindow)
 {
     ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
+ShowWindow::~ShowWindow()
 {
     delete ui;
 }
