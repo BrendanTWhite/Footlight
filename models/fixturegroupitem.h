@@ -15,7 +15,7 @@ class FixtureGroupItem : public QObject
     Q_OBJECT
 
 public:
-    explicit FixtureGroupItem(Show *parent, FixtureGroup *fg, Fixture *f);
+    explicit FixtureGroupItem(FixtureGroup *fg, Fixture *f);
     ~FixtureGroupItem();
 
     QString fixtureGroupName();

@@ -1,7 +1,7 @@
 #include "fixturegroupitem.h"
 
-FixtureGroupItem::FixtureGroupItem(Show* parent, FixtureGroup* fg, Fixture* f)
-    : QObject{parent}
+FixtureGroupItem::FixtureGroupItem(FixtureGroup* fg, Fixture* f)
+    : QObject{fg}
 {
     m_fixturegroup = fg;
     m_fixture = f;

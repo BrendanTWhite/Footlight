@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
     qDebug() << "Fixture" << f->id() << "U" << f->universe() << "dmx" << f->channel() << f->name();
     qDebug() << "FixtureGroup" << fg->id() << fg->name();
 
-    FixtureGroupItem* fgi = new FixtureGroupItem(show, fg, f);
+    FixtureGroupItem* fgi = new FixtureGroupItem(fg, f);
     qDebug() << "FGI FG:" << fgi->fixtureGroupName()
              << "F: " << fgi->fixtureName();
 
