@@ -12,6 +12,9 @@
 #include <QtDebug>
 #include <QPointer>
 
+#include <QFileDialog>
+#include <QDir>
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -66,11 +69,11 @@ int main(int argc, char *argv[])
 
     // create a dummy show
     QPointer<Show> show = new Show{&a, "Godot Finally Arrives"};
-    QPointer<Show> show2 = new Show{&a, "Romeo & Juliet"};
+    // QPointer<Show> show2 = new Show{&a, "Romeo & Juliet"};
 
     qDebug() << "----------------------------------- ";
     qDebug() << "Show" << show->id() << show->name();
-    qDebug() << "Show" << show2->id() << show2->name();
+    // qDebug() << "Show" << show2->id() << show2->name();
 
     // Create a QList of fixtures
     QList<Fixture*> fixtures = {
@@ -105,14 +108,31 @@ int main(int argc, char *argv[])
     // Put fixtures in the groups
     QPointer<FixtureGroup> fg = new FixtureGroup{show, "my fixture group"};
     QPointer<Fixture> f = new Fixture{show, 0, 0, "my fixture"};
-    qDebug() << "Fixture" << f->id() << "U" << f->universe() << "dmx" << f->channel() << f->name();
-    qDebug() << "FixtureGroup" << fg->id() << fg->name();
+    // qDebug() << "Fixture" << f->id() << "U" << f->universe() << "dmx" << f->channel() << f->name();
+    // qDebug() << "FixtureGroup" << fg->id() << fg->name();
 
     QPointer<FixtureGroupItem> fgi = new FixtureGroupItem(fg, f);
     qDebug() << "FGI FG:" << fgi->fixtureGroupName()
              << "F: " << fgi->fixtureName();
 
+    QPointer<FixtureGroupItem> fgi2 = new FixtureGroupItem(
+        fixtureGroups[1],
+        fixtures[1]
+        );
+    qDebug() << "FGI2 FG:" << fgi2->fixtureGroupName()
+             << "F: " << fgi2->fixtureName();
+
     qDebug() << "----------------------------------- ";
+
+    // // ask user to select a .hff file
+    // QString fileName = QFileDialog::getOpenFileName(
+    //     nullptr,                            // parent widget for dialog box
+    //     ("Open Footlight Show"),            // prompt
+    //     QDir::homePath(),                   // starting directory
+    //     ("Footlight Files (*.json *.hff)")  // filter
+    // );
+    // qDebug() << "---" << typeid(fileName).name() << "---";
+    // qDebug() << "---" << fileName << "---";
 
     ShowWindow sw;
     NewOrOpenWindow nw;
