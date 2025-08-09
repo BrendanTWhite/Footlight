@@ -135,8 +135,9 @@ int main(int argc, char *argv[])
     // qDebug() << "---" << fileName << "---";
 
     ShowWindow sw;
-    NewOrOpenWindow nw;
     sw.show();
+
+    NewOrOpenWindow nw;
     nw.show();
 
     return a.exec();
