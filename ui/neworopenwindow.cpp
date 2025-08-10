@@ -12,3 +12,9 @@ NewOrOpenWindow::~NewOrOpenWindow()
 {
     delete ui;
 }
+
+void NewOrOpenWindow::on_quitButton_clicked()
+{
+    QCoreApplication::instance()->quit();
+}
+

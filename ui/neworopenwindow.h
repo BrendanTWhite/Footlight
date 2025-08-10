@@ -15,6 +15,9 @@ public:
     explicit NewOrOpenWindow(QWidget *parent = nullptr);
     ~NewOrOpenWindow();
 
+private slots:
+    void on_quitButton_clicked();
+
 private:
     Ui::NewOrOpenWindow *ui;
 };
