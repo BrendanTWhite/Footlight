@@ -18,3 +18,17 @@ void NewOrOpenWindow::on_quitButton_clicked()
     QCoreApplication::instance()->quit();
 }
 
+
+void NewOrOpenWindow::on_newShowButton_clicked()
+{
+    QApplication::activeWindow()->hide();
+    ShowWindow::createNewShowWindow();
+}
+
+
+void NewOrOpenWindow::on_actionNew_Show_triggered()
+{
+    QApplication::activeWindow()->hide();
+    ShowWindow::createNewShowWindow();
+}
+

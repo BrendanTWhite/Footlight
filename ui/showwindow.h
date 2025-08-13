@@ -15,7 +15,13 @@ class ShowWindow : public QMainWindow
 
 public:
     ShowWindow(QWidget *parent = nullptr);
+    static void createNewShowWindow();
     ~ShowWindow();
+
+private slots:
+    void on_actionNew_triggered();
+
+    void on_actionClose_triggered();
 
 private:
     Ui::ShowWindow *ui;

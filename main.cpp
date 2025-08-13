@@ -134,11 +134,11 @@ int main(int argc, char *argv[])
     // qDebug() << "---" << typeid(fileName).name() << "---";
     // qDebug() << "---" << fileName << "---";
 
-    ShowWindow sw;
-    sw.show();
+    // ShowWindow sw;
+    // sw.show();
 
-    NewOrOpenWindow nw;
-    nw.show();
+    NewOrOpenWindow newOrOpenWindow;
+    newOrOpenWindow.show();
 
     return a.exec();
 }

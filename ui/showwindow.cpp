@@ -12,3 +12,22 @@ ShowWindow::~ShowWindow()
 {
     delete ui;
 }
+
+ void ShowWindow::createNewShowWindow() {
+    ShowWindow *newShowWindow = new ShowWindow();
+    newShowWindow->setAttribute(Qt::WA_DeleteOnClose);
+    newShowWindow->show();
+}
+
+
+void ShowWindow::on_actionNew_triggered()
+{
+    createNewShowWindow();
+}
+
+
+void ShowWindow::on_actionClose_triggered()
+{
+    QApplication::activeWindow()->close();
+}
+

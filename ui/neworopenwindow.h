@@ -2,6 +2,7 @@
 #define NEWOROPENWINDOW_H
 
 #include <QMainWindow>
+#include "showwindow.h"
 
 namespace Ui {
 class NewOrOpenWindow;
@@ -17,6 +18,10 @@ public:
 
 private slots:
     void on_quitButton_clicked();
+
+    void on_newShowButton_clicked();
+
+    void on_actionNew_Show_triggered();
 
 private:
     Ui::NewOrOpenWindow *ui;
