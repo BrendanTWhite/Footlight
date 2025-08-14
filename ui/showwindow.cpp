@@ -34,24 +34,28 @@ void ShowWindow::on_actionClose_triggered()
 
 void ShowWindow::on_fixturesAddButton_clicked()
 {
+    QMainWindow::statusBar()->showMessage(tr("fixtures AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
 
 void ShowWindow::on_groupsAddButton_clicked()
 {
+    QMainWindow::statusBar()->showMessage(tr("groups AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
 
 void ShowWindow::on_scenesAddButton_clicked()
 {
+    QMainWindow::statusBar()->showMessage(tr("scenes AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
 
 void ShowWindow::on_cuesAddButton_clicked()
 {
+    QMainWindow::statusBar()->showMessage(tr("cues AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
