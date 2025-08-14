@@ -75,34 +75,34 @@ int main(int argc, char *argv[])
     qDebug() << "Show" << show->id() << show->name();
     // qDebug() << "Show" << show2->id() << show2->name();
 
-    // Create a QList of fixtures
-    QList<Fixture*> fixtures = {
-         new Fixture{show, 1, 1, "Fred"},
-         new Fixture{show, 1, 2, "George"},
-         new Fixture{show, 1, 3, "Tom", 9},
-         new Fixture{show, 1, 4, "Dick"},
-         new Fixture{show, 1, 5, "Harry"}
-    };
+    // // Create a QList of fixtures
+    // QList<Fixture*> fixtures = {
+    //      new Fixture{show, 1, 1, "Fred"},
+    //      new Fixture{show, 1, 2, "George"},
+    //      new Fixture{show, 1, 3, "Tom", 9},
+    //      new Fixture{show, 1, 4, "Dick"},
+    //      new Fixture{show, 1, 5, "Harry"}
+    // };
 
-    qDebug() << "----------------------------------- ";
-    for (const auto &fixture : fixtures) {
-        qDebug() << "Fixture" << fixture->id()
-                 << "U" << fixture->universe()
-                 << "dmx" << fixture->channel()
-                 << fixture->name();
-    }
+    // qDebug() << "----------------------------------- ";
+    // for (const auto &fixture : fixtures) {
+    //     qDebug() << "Fixture" << fixture->id()
+    //              << "U" << fixture->universe()
+    //              << "dmx" << fixture->channel()
+    //              << fixture->name();
+    // }
 
-    // Create a QList of Fixture Groups
-    QList<FixtureGroup*> fixtureGroups = {
-        new FixtureGroup{show,"Basil"},
-        new FixtureGroup{show,"Sybil"},
-        new FixtureGroup{show,"Polly"}
-    };
+    // // Create a QList of Fixture Groups
+    // QList<FixtureGroup*> fixtureGroups = {
+    //     new FixtureGroup{show,"Basil"},
+    //     new FixtureGroup{show,"Sybil"},
+    //     new FixtureGroup{show,"Polly"}
+    // };
 
-    qDebug() << "----------------------------------- ";
-    for (const auto &fixtureGroup : fixtureGroups) {
-        qDebug() << "FixtureGroup" << fixtureGroup->id() << fixtureGroup->name();
-    }
+    // qDebug() << "----------------------------------- ";
+    // for (const auto &fixtureGroup : fixtureGroups) {
+    //     qDebug() << "FixtureGroup" << fixtureGroup->id() << fixtureGroup->name();
+    // }
 
     qDebug() << "----------------------------------- ";
     // Put fixtures in the groups
@@ -115,12 +115,12 @@ int main(int argc, char *argv[])
     qDebug() << "FGI FG:" << fgi->fixtureGroupName()
              << "F: " << fgi->fixtureName();
 
-    QPointer<FixtureGroupItem> fgi2 = new FixtureGroupItem(
-        fixtureGroups[1],
-        fixtures[1]
-        );
-    qDebug() << "FGI2 FG:" << fgi2->fixtureGroupName()
-             << "F: " << fgi2->fixtureName();
+    // QPointer<FixtureGroupItem> fgi2 = new FixtureGroupItem(
+    //     fixtureGroups[1],
+    //     fixtures[1]
+    //     );
+    // qDebug() << "FGI2 FG:" << fgi2->fixtureGroupName()
+    //          << "F: " << fgi2->fixtureName();
 
     qDebug() << "----------------------------------- ";
 
