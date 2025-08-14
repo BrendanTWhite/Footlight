@@ -4,7 +4,7 @@
 ShowWindow::ShowWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ShowWindow),
-    fixtureModel()
+    fixtureModel(this)
 {
     ui->setupUi(this);
 

@@ -10,7 +10,7 @@ class FixtureModel : public QAbstractTableModel
     Q_OBJECT
 
 public:
-    explicit FixtureModel(QObject *parent = nullptr);
+    explicit FixtureModel(QObject *parent);
     ~FixtureModel();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;

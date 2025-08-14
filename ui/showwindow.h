@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QItemSelectionModel>
 
-#include "../models/fixturemodel.h"
+#include "fixturemodel.h"
 
 
 QT_BEGIN_NAMESPACE
