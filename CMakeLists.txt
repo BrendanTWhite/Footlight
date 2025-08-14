@@ -30,6 +30,8 @@ qt_add_executable(Footlight
     models/fixturegroup.h       models/fixturegroup.cpp
     models/fixturegroupitem.h   models/fixturegroupitem.cpp
 
+    models/fixturemodel.h       models/fixturemodel.cpp
+
     ui/neworopenwindow.h        ui/neworopenwindow.cpp  ui/neworopenwindow.ui
     ui/showwindow.h             ui/showwindow.cpp       ui/showwindow.ui
 
