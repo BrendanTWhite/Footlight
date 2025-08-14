@@ -1,5 +1,25 @@
 #include "fixture.h"
 
+Fixture::Fixture(Show *parent, int universe, int channel, QString name, long override_id)
+    : QObject{parent}
+{
+    static std::atomic_long m_next_id = 1;
+    if (override_id) {
+        m_next_id = override_id;
+    }
+    m_id = m_next_id++;
+
+    m_universe = universe;
+    m_channel = channel;
+    m_name = name;
+}
+
+Fixture::~Fixture()
+{
+    qDebug() << "~ Fixture" << this->m_id << this->m_name;
+}
+
+
 long Fixture::id() const
 {
     return m_id;
@@ -33,25 +53,4 @@ int Fixture::channel() const
 void Fixture::setChannel(int newChannel)
 {
     m_channel = newChannel;
-}
-
-
-Fixture::Fixture(Show *parent, int universe, int channel, QString name, long override_id)
-    : QObject{parent}
-{
-    static std::atomic_long m_next_id = 1;
-
-    if (override_id) {
-        m_next_id = override_id;
-    }
-
-    m_id = m_next_id++;
-    m_universe = universe;
-    m_channel = channel;
-    m_name = name;
-}
-
-Fixture::~Fixture()
-{
-    qDebug() << "~ Fixture" << this->m_id << this->m_name;
 }
