@@ -28,6 +28,30 @@ void ShowWindow::on_actionNew_triggered()
 
 void ShowWindow::on_actionClose_triggered()
 {
-    QApplication::activeWindow()->close();
+    this->close();
+}
+
+
+void ShowWindow::on_fixturesAddButton_clicked()
+{
+    this->window()->setWindowModified(true);
+}
+
+
+void ShowWindow::on_groupsAddButton_clicked()
+{
+    this->window()->setWindowModified(true);
+}
+
+
+void ShowWindow::on_scenesAddButton_clicked()
+{
+    this->window()->setWindowModified(true);
+}
+
+
+void ShowWindow::on_cuesAddButton_clicked()
+{
+    this->window()->setWindowModified(true);
 }
 
