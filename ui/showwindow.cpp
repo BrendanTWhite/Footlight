@@ -1,16 +1,39 @@
 #include "showwindow.h"
 #include "ui_showwindow.h"
 
-ShowWindow::ShowWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::ShowWindow)
+ShowWindow::ShowWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::ShowWindow),
+    fixtureModel()
 {
     ui->setupUi(this);
+
+    ui->fixturesView->setModel(&fixtureModel);
+
+    QItemSelectionModel* selectionModel = ui->fixturesView->selectionModel();
+    connect(selectionModel, &QItemSelectionModel::selectionChanged,
+            this, &ShowWindow::onSelectionChanged);
 }
 
 ShowWindow::~ShowWindow()
 {
     delete ui;
+}
+
+
+void ShowWindow::onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected)
+{
+    Q_UNUSED(deselected)
+
+    QModelIndexList list = selected.indexes();
+    const QModelIndex& index = list.first();
+
+    // QString countryName = index.data(Qt::DisplayRole).toString();
+    // ui->countryNameLabel->setText(countryName);
+
+    // QString countryCapital = index.data(CountryModel::CapitalRole).toString();
+    // ui->countryCapitalLabel->setText(countryCapital);
+
 }
 
  void ShowWindow::createNewShowWindow() {
