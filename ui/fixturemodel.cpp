@@ -16,32 +16,24 @@ int FixtureModel::rowCount(const QModelIndex & /*parent*/) const
 
 int FixtureModel::columnCount(const QModelIndex & /*parent*/) const
 {
-    return 4;
+    return columnMap.size();
 }
 
 QVariant FixtureModel::data(const QModelIndex &index, int role) const
 {
-    if (role == Qt::DisplayRole)
-        return QString("r%1c%2")
-            .arg(index.row() + 1)
-            .arg(index.column() +1);
+    if (role == Qt::DisplayRole) {
+        return QString("r%1 c%2")
+            .arg(index.row())
+            .arg(index.column());
+    }
 
     return QVariant();
 }
 
-QVariant FixtureModel::headerData(int section, Qt::Orientation orientation, int role) const
+QVariant FixtureModel::headerData(int column_id, Qt::Orientation orientation, int role) const
 {
     if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
-        switch (section) {
-        case 0:
-            return QString("first");
-        case 1:
-            return QString("second");
-        case 2:
-            return QString("third");
-        case 3:
-            return QString("fourth");
-        }
+        return columnMap.value(column_id);
     }
     return QVariant();
 }
