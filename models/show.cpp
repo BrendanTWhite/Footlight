@@ -1,7 +1,8 @@
 #include "show.h"
 
-Show::Show(QObject *parent, QString name, long override_id)
-    : QObject{parent}
+Show::Show(QString name, long override_id)
+    // a Show's parent is always the App
+    : QObject{QCoreApplication::instance()}
 {
     static std::atomic_long m_next_id = 1;
 

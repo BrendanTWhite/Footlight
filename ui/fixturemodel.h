@@ -25,12 +25,12 @@ signals:
 private:
 
     QMultiMap<int,QString> columnMap = QMultiMap<int,QString>({
-        {0,"ID"},
-        {1,"Bar"},
-        {2,"Name"},
-        {3,"Type"},
-        {4,"Universe"},
-        {5,"DMX"},
+        // Indexes must be zero-based incrementing integers
+        {0,"Name"},
+        {1,"Area"},
+        {2,"Type"},
+        {3,"Universe"},
+        {4,"DMX"},
     });
 
 };

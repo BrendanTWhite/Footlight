@@ -68,8 +68,8 @@ int main(int argc, char *argv[])
 
 
     // create a dummy show
-    QPointer<Show> show = new Show{&a, "Godot Finally Arrives"};
-    // QPointer<Show> show2 = new Show{&a, "Romeo & Juliet"};
+    QPointer<Show> show = new Show{"Godot Finally Arrives"};
+    // QPointer<Show> show2 = new Show{"Romeo & Juliet"};
 
     qDebug() << "----------------------------------- ";
     qDebug() << "Show" << show->id() << show->name();

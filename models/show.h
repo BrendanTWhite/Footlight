@@ -5,13 +5,14 @@
 #include <QString>
 #include <QObject>
 #include <atomic>
+#include <QCoreApplication>
 
 class Show : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Show(QObject *parent, QString name, long override_id = NULL);
+    explicit Show(QString name, long override_id = NULL);
     ~Show();
 
     long id() const;
@@ -22,6 +23,7 @@ public:
 private:
     long m_id;
     QString m_name;
+    // ShowWindow showWindow;
 
 signals:
 };
