@@ -33,6 +33,8 @@ qt_add_executable(Footlight
     ui/neworopenwindow.h        ui/neworopenwindow.cpp  ui/neworopenwindow.ui
     ui/showwindow.h             ui/showwindow.cpp       ui/showwindow.ui
 
+    ui/fixturemodel.h           ui/fixturemodel.cpp
+
 )
 
 qt_add_translations(

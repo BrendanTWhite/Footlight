@@ -58,7 +58,7 @@
           </layout>
          </item>
          <item>
-          <widget class="QListView" name="fixturesView">
+          <widget class="QTableView" name="fixturesView">
            <property name="alternatingRowColors">
             <bool>true</bool>
            </property>

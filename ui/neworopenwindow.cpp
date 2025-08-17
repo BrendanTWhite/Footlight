@@ -22,6 +22,7 @@ void NewOrOpenWindow::on_quitButton_clicked()
 void NewOrOpenWindow::on_newShowButton_clicked()
 {
     QApplication::activeWindow()->hide();
+    // TODO make this     getNewOrOpenWindow()->hide();
     ShowWindow::createNewShowWindow();
 }
 
@@ -29,6 +30,7 @@ void NewOrOpenWindow::on_newShowButton_clicked()
 void NewOrOpenWindow::on_actionNew_Show_triggered()
 {
     QApplication::activeWindow()->hide();
+    // TODO make this     getNewOrOpenWindow()->hide();
     ShowWindow::createNewShowWindow();
 }
 

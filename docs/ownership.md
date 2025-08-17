@@ -4,6 +4,7 @@ Object Ownership Diagram for main Footlight structures
 
 ```mermaid
 erDiagram
+    direction LR
 
 Show {
     int id
@@ -66,4 +67,6 @@ Cue {
     int delay
     int fade
 }
+
+Show ||--|| Window : has
 ```
