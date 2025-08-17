@@ -1,36 +1,36 @@
-#include "neworopenwindow.h"
-#include "ui_neworopenwindow.h"
+#include "homewindow.h"
+#include "ui_homewindow.h"
 
-NewOrOpenWindow::NewOrOpenWindow(QWidget *parent)
+HomeWindow::HomeWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::NewOrOpenWindow)
+    , ui(new Ui::HomeWindow)
 {
     ui->setupUi(this);
 }
 
-NewOrOpenWindow::~NewOrOpenWindow()
+HomeWindow::~HomeWindow()
 {
     delete ui;
 }
 
-void NewOrOpenWindow::on_quitButton_clicked()
+void HomeWindow::on_quitButton_clicked()
 {
     QCoreApplication::instance()->quit();
 }
 
 
-void NewOrOpenWindow::on_newShowButton_clicked()
+void HomeWindow::on_newShowButton_clicked()
 {
     QApplication::activeWindow()->hide();
-    // TODO make this     getNewOrOpenWindow()->hide();
+    // TODO make this     getHomeWindow()->hide();
     ShowWindow::createNewShowWindow();
 }
 
 
-void NewOrOpenWindow::on_actionNew_Show_triggered()
+void HomeWindow::on_actionNew_Show_triggered()
 {
     QApplication::activeWindow()->hide();
-    // TODO make this     getNewOrOpenWindow()->hide();
+    // TODO make this     getHomeWindow()->hide();
     ShowWindow::createNewShowWindow();
 }
 

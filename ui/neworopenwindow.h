@@ -1,20 +1,20 @@
-#ifndef NEWOROPENWINDOW_H
-#define NEWOROPENWINDOW_H
+#ifndef HOMEWINDOW_H
+#define HOMEWINDOW_H
 
 #include <QMainWindow>
 #include "showwindow.h"
 
 namespace Ui {
-class NewOrOpenWindow;
+class HomeWindow;
 }
 
-class NewOrOpenWindow : public QMainWindow
+class HomeWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit NewOrOpenWindow(QWidget *parent = nullptr);
-    ~NewOrOpenWindow();
+    explicit HomeWindow(QWidget *parent = nullptr);
+    ~HomeWindow();
 
 private slots:
     void on_quitButton_clicked();
@@ -24,7 +24,7 @@ private slots:
     void on_actionNew_Show_triggered();
 
 private:
-    Ui::NewOrOpenWindow *ui;
+    Ui::HomeWindow *ui;
 };
 
-#endif // NEWOROPENWINDOW_H
+#endif // HOMEWINDOW_H

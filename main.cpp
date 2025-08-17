@@ -1,5 +1,5 @@
 #include "ui/showwindow.h"
-#include "ui/neworopenwindow.h"
+#include "ui/homewindow.h"
 
 #include "models/show.h"
 #include "models/fixture.h"
@@ -137,8 +137,8 @@ int main(int argc, char *argv[])
     // ShowWindow sw;
     // sw.show();
 
-    NewOrOpenWindow newOrOpenWindow;
-    newOrOpenWindow.show();
+    HomeWindow homeWindow;
+    homeWindow.show();
 
     return a.exec();
 }
