@@ -6,6 +6,12 @@ Object Ownership Diagram for main Footlight structures
 erDiagram
     direction LR
 
+App ||--|| HomeWindow : has
+
+App ||--o{ ShowWindow : has
+
+ShowWindow ||--|| Show :has
+
 Show {
     int id
     string name
@@ -68,5 +74,4 @@ Cue {
     int fade
 }
 
-Show ||--|| Window : has
 ```
