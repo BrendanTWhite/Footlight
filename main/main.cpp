@@ -1,10 +1,10 @@
-#include "ui/showwindow.h"
-#include "ui/homewindow.h"
+#include "../ui/showwindow.h"
+#include "../ui/homewindow.h"
 
-#include "models/show.h"
-#include "models/fixture.h"
-#include "models/fixturegroup.h"
-#include "models/fixturegroupitem.h"
+#include "../models/show.h"
+#include "../models/fixture.h"
+#include "../models/fixturegroup.h"
+#include "../models/fixturegroupitem.h"
 
 #include <QApplication>
 #include <QLocale>

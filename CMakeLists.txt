@@ -21,9 +21,7 @@ qt_standard_project_setup()
 qt_add_executable(Footlight
     WIN32 MACOSX_BUNDLE
 
-    main.cpp
-
-
+    main/main.cpp
 
     models/show.h               models/show.cpp
     models/fixture.h            models/fixture.cpp
