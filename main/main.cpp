@@ -39,16 +39,6 @@ int main(int argc, char *argv[])
     // qDebug() << "CMAKE_PROJECT_DESCRIPTION" << CONFIG(CMAKE_PROJECT_DESCRIPTION);
     // qDebug() << "CMAKE_PROJECT_VERSION"     << CONFIG(CMAKE_PROJECT_VERSION);
 
-    // // from HF vars in Projects
-    // qDebug() << "----------------------------------- ";
-    // qDebug() << "HF_ORG_NAME"   << CONFIG(HF_ORG_NAME);
-    // qDebug() << "HF_ORG_DOMAIN" << CONFIG(HF_ORG_DOMAIN);
-    // qDebug() << "----------------------------------- ";
-    // qDebug() << "HF_APP_NAME"           << CONFIG(HF_APP_NAME);
-    // qDebug() << "HF_APP_DISPLAY_NAME"   << CONFIG(HF_APP_DISPLAY_NAME);
-    // qDebug() << "HF_APP_DESCRIPTION"    << CONFIG(HF_APP_DESCRIPTION);
-    // qDebug() << "HF_APP_VERSION"        << CONFIG(HF_APP_VERSION);
-
     // Set stuff in app
     a.setOrganizationName(CONFIG(HF_ORG_NAME));
     a.setOrganizationDomain(CONFIG(HF_ORG_DOMAIN));
