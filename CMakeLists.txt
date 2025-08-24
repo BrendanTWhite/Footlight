@@ -16,6 +16,15 @@ project(${HF_APP_NAME} LANGUAGES CXX DESCRIPTION "${HF_APP_DESCRIPTION}" VERSION
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 
+if (ANDROID)
+    message(FATAL_ERROR "This project cannot be built on Android (yet).")
+endif()
+
+if (IOS)
+    message(FATAL_ERROR "This project cannot be built on iOS (yet).")
+endif()
+
+
 qt_standard_project_setup()
 
 qt_add_executable(Footlight
