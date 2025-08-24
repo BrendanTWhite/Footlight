@@ -15,22 +15,20 @@ HomeWindow::~HomeWindow()
 
 void HomeWindow::on_quitButton_clicked()
 {
-    QCoreApplication::instance()->quit();
+    QCoreApplication::quit();
 }
 
 
 void HomeWindow::on_newShowButton_clicked()
 {
-    QApplication::activeWindow()->hide();
-    // TODO make this     getHomeWindow()->hide();
+    this->hide();
     ShowWindow::createNewShowWindow();
 }
 
 
 void HomeWindow::on_actionNew_Show_triggered()
 {
-    QApplication::activeWindow()->hide();
-    // TODO make this     getHomeWindow()->hide();
+    this->hide();
     ShowWindow::createNewShowWindow();
 }
 
