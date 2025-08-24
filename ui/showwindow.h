@@ -18,8 +18,7 @@ class ShowWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    ShowWindow(QWidget *parent = nullptr);
-    static void createNewShowWindow();
+    static void createNewShowWindow(bool showImmediately = true);
     ~ShowWindow();
 
 private slots:
@@ -38,6 +37,8 @@ private slots:
     void on_cuesAddButton_clicked();
 
 private:
+    ShowWindow(QWidget *parent = nullptr);
+
     Ui::ShowWindow *ui;
     FixtureModel fixtureModel;
 };

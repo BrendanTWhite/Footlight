@@ -36,10 +36,13 @@ void ShowWindow::onSelectionChanged(const QItemSelection& selected, const QItemS
 
 }
 
- void ShowWindow::createNewShowWindow() {
+ void ShowWindow::createNewShowWindow(bool showImmediately) {
     ShowWindow *newShowWindow = new ShowWindow();
     newShowWindow->setAttribute(Qt::WA_DeleteOnClose);
-    newShowWindow->show();
+
+    if (showImmediately) {
+        newShowWindow->show();
+    }
 }
 
 
@@ -57,28 +60,28 @@ void ShowWindow::on_actionClose_triggered()
 
 void ShowWindow::on_fixturesAddButton_clicked()
 {
-    QMainWindow::statusBar()->showMessage(tr("fixtures AddButton clicked"), 2000);
+    this->statusBar()->showMessage(tr("fixtures AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
 
 void ShowWindow::on_groupsAddButton_clicked()
 {
-    QMainWindow::statusBar()->showMessage(tr("groups AddButton clicked"), 2000);
+    this->statusBar()->showMessage(tr("groups AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
 
 void ShowWindow::on_scenesAddButton_clicked()
 {
-    QMainWindow::statusBar()->showMessage(tr("scenes AddButton clicked"), 2000);
+    this->statusBar()->showMessage(tr("scenes AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
 
 void ShowWindow::on_cuesAddButton_clicked()
 {
-    QMainWindow::statusBar()->showMessage(tr("cues AddButton clicked"), 2000);
+    this->statusBar()->showMessage(tr("cues AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
