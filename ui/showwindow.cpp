@@ -46,9 +46,9 @@ void ShowWindow::openExistingShow(QString filePath) {
     if (filePath == "") {
         filePath = QFileDialog::getOpenFileName(
             nullptr,
-            "Open HF Footlights file",
+            tr("Open HF Footlights file"),
             QDir::homePath(),
-            "HF Footlights files (*.hff *.json)"
+            tr("HF Footlights files") + " (*.hff *.json)"
             );
 
     }
