@@ -1,10 +1,10 @@
-#include "ui/showwindow.h"
-#include "ui/neworopenwindow.h"
+#include "../ui/showwindow.h"
+#include "../ui/homewindow.h"
 
-#include "models/show.h"
-#include "models/fixture.h"
-#include "models/fixturegroup.h"
-#include "models/fixturegroupitem.h"
+#include "../models/show.h"
+#include "../models/fixture.h"
+#include "../models/fixturegroup.h"
+#include "../models/fixturegroupitem.h"
 
 #include <QApplication>
 #include <QLocale>
@@ -38,16 +38,6 @@ int main(int argc, char *argv[])
     // qDebug() << "CMAKE_PROJECT_NAME"        << CONFIG(CMAKE_PROJECT_NAME);
     // qDebug() << "CMAKE_PROJECT_DESCRIPTION" << CONFIG(CMAKE_PROJECT_DESCRIPTION);
     // qDebug() << "CMAKE_PROJECT_VERSION"     << CONFIG(CMAKE_PROJECT_VERSION);
-
-    // // from HF vars in Projects
-    // qDebug() << "----------------------------------- ";
-    // qDebug() << "HF_ORG_NAME"   << CONFIG(HF_ORG_NAME);
-    // qDebug() << "HF_ORG_DOMAIN" << CONFIG(HF_ORG_DOMAIN);
-    // qDebug() << "----------------------------------- ";
-    // qDebug() << "HF_APP_NAME"           << CONFIG(HF_APP_NAME);
-    // qDebug() << "HF_APP_DISPLAY_NAME"   << CONFIG(HF_APP_DISPLAY_NAME);
-    // qDebug() << "HF_APP_DESCRIPTION"    << CONFIG(HF_APP_DESCRIPTION);
-    // qDebug() << "HF_APP_VERSION"        << CONFIG(HF_APP_VERSION);
 
     // Set stuff in app
     a.setOrganizationName(CONFIG(HF_ORG_NAME));
@@ -137,8 +127,8 @@ int main(int argc, char *argv[])
     // ShowWindow sw;
     // sw.show();
 
-    NewOrOpenWindow newOrOpenWindow;
-    newOrOpenWindow.show();
+    HomeWindow homeWindow;
+    homeWindow.show();
 
     return a.exec();
 }
