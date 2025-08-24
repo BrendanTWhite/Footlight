@@ -1,3 +1,7 @@
+#include <QFileDialog>
+#include <QtDebug>
+#include <QDir>
+
 #include "showwindow.h"
 #include "ui_showwindow.h"
 
@@ -36,7 +40,31 @@ void ShowWindow::onSelectionChanged(const QItemSelection& selected, const QItemS
 
 }
 
- void ShowWindow::createNewShowWindow(bool showImmediately) {
+void ShowWindow::openExistingShow(QString filePath) {
+
+    // First, get file path (if not already supplied)
+    if (filePath == "") {
+        filePath = QFileDialog::getOpenFileName(
+            nullptr,
+            "Open HF Footlights file",
+            QDir::homePath(),
+            "HF Footlights files (*.hff *.json)"
+            );
+
+    }
+    qDebug() << "Attempting to open: " << filePath;
+
+    // Then, get QFile from this file path
+    QFile file = QFile(filePath);
+
+    // Then, attempt to load the contents of the file in to this->show()
+    // TODO - implement this
+
+
+
+}
+
+void ShowWindow::createNewShowWindow(bool showImmediately) {
     ShowWindow *newShowWindow = new ShowWindow();
     newShowWindow->setAttribute(Qt::WA_DeleteOnClose);
 
@@ -83,5 +111,11 @@ void ShowWindow::on_cuesAddButton_clicked()
 {
     this->statusBar()->showMessage(tr("cues AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
+}
+
+
+void ShowWindow::on_actionOpen_triggered()
+{
+    openExistingShow();
 }
 

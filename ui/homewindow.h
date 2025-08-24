@@ -23,6 +23,10 @@ private slots:
 
     void on_actionNew_Show_triggered();
 
+    void on_openOtherButton_clicked();
+
+    void on_actionOpen_Show_triggered();
+
 private:
     Ui::HomeWindow *ui;
 };

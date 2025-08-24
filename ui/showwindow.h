@@ -19,6 +19,8 @@ class ShowWindow : public QMainWindow
 
 public:
     static void createNewShowWindow(bool showImmediately = true);
+    static void openExistingShow(QString filePath = QString());
+
     ~ShowWindow();
 
 private slots:
@@ -35,6 +37,8 @@ private slots:
     void on_scenesAddButton_clicked();
 
     void on_cuesAddButton_clicked();
+
+    void on_actionOpen_triggered();
 
 private:
     ShowWindow(QWidget *parent = nullptr);

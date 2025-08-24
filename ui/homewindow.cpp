@@ -32,3 +32,15 @@ void HomeWindow::on_actionNew_Show_triggered()
     ShowWindow::createNewShowWindow();
 }
 
+
+void HomeWindow::on_openOtherButton_clicked()
+{
+    ShowWindow::openExistingShow();
+}
+
+
+void HomeWindow::on_actionOpen_Show_triggered()
+{
+    ShowWindow::openExistingShow();
+}
+
