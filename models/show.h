@@ -23,7 +23,6 @@ public:
 private:
     long m_id;
     QString m_name;
-    // ShowWindow showWindow;
 
 signals:
 };
