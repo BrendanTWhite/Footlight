@@ -8,11 +8,13 @@
 ShowWindow::ShowWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ShowWindow),
-    fixtureModel(this)
+    m_fixture_model(this)
 {
     ui->setupUi(this);
 
-    ui->fixturesView->setModel(&fixtureModel);
+    ui->fixturesView->setModel(&m_fixture_model);
+
+    m_show = new Show("asdf");
 
     QItemSelectionModel* selectionModel = ui->fixturesView->selectionModel();
     connect(selectionModel, &QItemSelectionModel::selectionChanged,

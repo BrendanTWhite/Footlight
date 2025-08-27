@@ -5,7 +5,7 @@
 #include <QItemSelectionModel>
 
 #include "fixturemodel.h"
-
+#include "../models/show.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -44,6 +44,7 @@ private:
     ShowWindow(QWidget *parent = nullptr);
 
     Ui::ShowWindow *ui;
-    FixtureModel fixtureModel;
+    Show* m_show;
+    FixtureModel m_fixture_model;
 };
 #endif // MAINWINDOW_H
