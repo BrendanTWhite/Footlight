@@ -5,8 +5,8 @@
 #include "showwindow.h"
 #include "ui_showwindow.h"
 
-ShowWindow::ShowWindow(QWidget *parent) :
-    QMainWindow(parent),
+ShowWindow::ShowWindow() :
+    QMainWindow(nullptr),
     ui(new Ui::ShowWindow),
     m_fixture_model(this)
 {
@@ -14,7 +14,7 @@ ShowWindow::ShowWindow(QWidget *parent) :
 
     ui->fixturesView->setModel(&m_fixture_model);
 
-    m_show = new Show("asdf");
+    m_show = new Show(tr("New Show"));
 
     QItemSelectionModel* selectionModel = ui->fixturesView->selectionModel();
     connect(selectionModel, &QItemSelectionModel::selectionChanged,

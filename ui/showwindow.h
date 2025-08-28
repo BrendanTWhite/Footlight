@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QItemSelectionModel>
+#include <QPointer>
 
 #include "fixturemodel.h"
 #include "../models/show.h"
@@ -41,10 +42,10 @@ private slots:
     void on_actionOpen_triggered();
 
 private:
-    ShowWindow(QWidget *parent = nullptr);
+    ShowWindow();
 
     Ui::ShowWindow *ui;
-    Show* m_show;
+    QPointer<Show> m_show;
     FixtureModel m_fixture_model;
 };
 #endif // MAINWINDOW_H
