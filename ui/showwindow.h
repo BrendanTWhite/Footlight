@@ -24,7 +24,7 @@ public:
 
     ~ShowWindow();
 
-    QPointer<Show> show() const;
+    QPointer<Show> getShow() const;
 
 private slots:
     void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);

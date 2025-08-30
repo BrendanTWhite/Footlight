@@ -26,7 +26,7 @@ ShowWindow::ShowWindow(QPointer<Show> show) :
             this, &ShowWindow::onSelectionChanged);
 }
 
-QPointer<Show> ShowWindow::show() const
+QPointer<Show> ShowWindow::getShow() const
 {
     return this->m_show;
 }
@@ -85,7 +85,7 @@ void ShowWindow::createNewShowWindow(bool showImmediately) {
     QPointer<ShowWindow> newShowWindow = new ShowWindow(show);
 
     qDebug()<< "sw cn newShowWindow" << newShowWindow->objectName();
-    qDebug()<< "sw cn newShowWindow->show()" << newShowWindow->show()->name();
+    qDebug()<< "sw cn newShowWindow->show()" << newShowWindow->getShow()->name();
 
 
     newShowWindow->setAttribute(Qt::WA_DeleteOnClose);

@@ -12,41 +12,14 @@ FixtureModel::~FixtureModel()
 
 int FixtureModel::rowCount(const QModelIndex & /*parent*/) const
 {
-    // ShowWindow* show = this->show();
-    // if (show == nullptr) {
-    //     qDebug() << "show is nullptr";
-    // }
-    qDebug() << "fm rc 1";
-    qDebug() << this->objectName(); // empty string
-    qDebug() << "fm rc 2";
-    qDebug() << this->parent()->objectName(); // ShowWindow
+
     ShowWindow* sw = qobject_cast<ShowWindow*>(this->parent());
-    qDebug() << "fm rc 3";
 
-    // ShowWindow* show = this->show();
-    if (sw == nullptr) {
-        qDebug() << "ERROR - sw is nullptr";
-        exit(EXIT_FAILURE);
-    }
-    qDebug() << sw->objectName(); // empty string
-    qDebug() << "fm rc 4";
+    Show* s = sw->getShow();
 
-    Show* s = sw->show();
-    qDebug() << "fm rc 5";
-
-    if (s == nullptr) {
-        qDebug() << "ERROR - s is nullptr"; // yep, it's nullptr
-        exit(EXIT_FAILURE);
-    }
-    qDebug() << s->objectName(); // crashes; s is nullptr
-    qDebug() << "fm rc 6";
-
-    qDebug() << s->name();
-    qDebug() << "fm rc 7";
     QList<Fixture *> fixtures = s->findChildren<Fixture *>();
-    qDebug() << "fm rc 8";
-    // return fixtures.count();
-    return 6;
+
+    return fixtures.count();
 }
 
 int FixtureModel::columnCount(const QModelIndex & /*parent*/) const
