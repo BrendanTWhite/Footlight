@@ -10,16 +10,12 @@ ShowWindow::ShowWindow(QPointer<Show> show) :
     ui(new Ui::ShowWindow),
     m_fixture_model(this)
 {
-    qDebug()<< "sw i [start]";
-
-    qDebug()<< "sw i show" << show->name(); // works!
     m_show = show;
-    qDebug()<< "sw i m_show" << m_show->name(); // works!
+    m_show->setParent(this); // show's parent is showwindow
 
     ui->setupUi(this);
 
     ui->fixturesView->setModel(&m_fixture_model);
-
 
     QItemSelectionModel* selectionModel = ui->fixturesView->selectionModel();
     connect(selectionModel, &QItemSelectionModel::selectionChanged,
