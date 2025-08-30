@@ -78,24 +78,14 @@ void ShowWindow::openExistingShow(QString filePath) {
 
 void ShowWindow::createNewShowWindow(bool showImmediately) {
 
-    QPointer<Show> show = new Show(tr("Potato"));
-
-    qDebug()<< "sw cn show" << show->name();
-
-    QPointer<ShowWindow> newShowWindow = new ShowWindow(show);
-
-    qDebug()<< "sw cn newShowWindow" << newShowWindow->objectName();
-    qDebug()<< "sw cn newShowWindow->show()" << newShowWindow->getShow()->name();
-
+    QPointer<Show> newShow = new Show(tr("New Show"));
+    QPointer<ShowWindow> newShowWindow = new ShowWindow(newShow);
 
     newShowWindow->setAttribute(Qt::WA_DeleteOnClose);
+    newShowWindow->setWindowTitle(newShow->name());
 
     if (showImmediately) {
-        qDebug()<< "sw cn present" << show->name() << "now ...";
         newShowWindow->show();
-        qDebug()<< "... done";
-    } else {
-        qDebug()<< "sw cn present" << show->name() << "later";
     }
 }
 
