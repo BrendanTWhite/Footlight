@@ -7,11 +7,12 @@ FixtureModel::FixtureModel(QObject *parent)
 FixtureModel::~FixtureModel()
 {}
 
-
+#include "../models/show.h"
+#include "showwindow.h"
 
 int FixtureModel::rowCount(const QModelIndex & /*parent*/) const
 {
-    return 6;
+    return fixtures().count();
 }
 
 int FixtureModel::columnCount(const QModelIndex & /*parent*/) const
@@ -37,3 +38,10 @@ QVariant FixtureModel::headerData(int column_id, Qt::Orientation orientation, in
     }
     return QVariant();
 }
+
+QList<Fixture *> FixtureModel::fixtures() const
+{
+    Show* s = qobject_cast<ShowWindow*>(this->parent())->getShow();
+    return s->findChildren<Fixture *>();
+}
+

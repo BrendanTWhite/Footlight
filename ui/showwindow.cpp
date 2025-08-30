@@ -5,18 +5,30 @@
 #include "showwindow.h"
 #include "ui_showwindow.h"
 
-ShowWindow::ShowWindow(QWidget *parent) :
-    QMainWindow(parent),
+ShowWindow::ShowWindow(QPointer<Show> show) :
+    QMainWindow(nullptr),
     ui(new Ui::ShowWindow),
-    fixtureModel(this)
+    m_fixture_model(this)
 {
+    qDebug()<< "sw i [start]";
+
+    qDebug()<< "sw i show" << show->name(); // works!
+    m_show = show;
+    qDebug()<< "sw i m_show" << m_show->name(); // works!
+
     ui->setupUi(this);
 
-    ui->fixturesView->setModel(&fixtureModel);
+    ui->fixturesView->setModel(&m_fixture_model);
+
 
     QItemSelectionModel* selectionModel = ui->fixturesView->selectionModel();
     connect(selectionModel, &QItemSelectionModel::selectionChanged,
             this, &ShowWindow::onSelectionChanged);
+}
+
+QPointer<Show> ShowWindow::getShow() const
+{
+    return this->m_show;
 }
 
 ShowWindow::~ShowWindow()
@@ -65,11 +77,25 @@ void ShowWindow::openExistingShow(QString filePath) {
 }
 
 void ShowWindow::createNewShowWindow(bool showImmediately) {
-    ShowWindow *newShowWindow = new ShowWindow();
+
+    QPointer<Show> show = new Show(tr("Potato"));
+
+    qDebug()<< "sw cn show" << show->name();
+
+    QPointer<ShowWindow> newShowWindow = new ShowWindow(show);
+
+    qDebug()<< "sw cn newShowWindow" << newShowWindow->objectName();
+    qDebug()<< "sw cn newShowWindow->show()" << newShowWindow->getShow()->name();
+
+
     newShowWindow->setAttribute(Qt::WA_DeleteOnClose);
 
     if (showImmediately) {
+        qDebug()<< "sw cn present" << show->name() << "now ...";
         newShowWindow->show();
+        qDebug()<< "... done";
+    } else {
+        qDebug()<< "sw cn present" << show->name() << "later";
     }
 }
 

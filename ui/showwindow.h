@@ -3,9 +3,10 @@
 
 #include <QMainWindow>
 #include <QItemSelectionModel>
+#include <QPointer>
 
 #include "fixturemodel.h"
-
+#include "../models/show.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,6 +23,8 @@ public:
     static void openExistingShow(QString filePath = QString());
 
     ~ShowWindow();
+
+    QPointer<Show> getShow() const;
 
 private slots:
     void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
@@ -41,9 +44,10 @@ private slots:
     void on_actionOpen_triggered();
 
 private:
-    ShowWindow(QWidget *parent = nullptr);
+    ShowWindow(QPointer<Show> show);
 
     Ui::ShowWindow *ui;
-    FixtureModel fixtureModel;
+    QPointer<Show> m_show;
+    FixtureModel m_fixture_model;
 };
 #endif // MAINWINDOW_H
