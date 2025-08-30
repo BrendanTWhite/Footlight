@@ -105,6 +105,7 @@ void ShowWindow::on_actionClose_triggered()
 void ShowWindow::on_fixturesAddButton_clicked()
 {
     this->statusBar()->showMessage(tr("fixtures AddButton clicked"), 2000);
+    this->getShow()->addNewFixture();
     this->window()->setWindowModified(true);
 }
 

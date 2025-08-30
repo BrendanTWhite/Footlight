@@ -20,6 +20,8 @@ public:
     QString name() const;
     void setName(const QString &newName);
 
+    void addNewFixture();
+
 private:
     long m_id;
     QString m_name;

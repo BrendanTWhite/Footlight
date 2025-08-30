@@ -14,6 +14,10 @@ Show::Show(QString name, long override_id)
     m_name = name;
 }
 
+void Show::addNewFixture(){
+    qDebug() << "batman";
+}
+
 Show::~Show()
 {
     qDebug() << "~ Show" << this->m_id << this->m_name;
