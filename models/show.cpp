@@ -1,5 +1,7 @@
 #include "show.h"
 
+#include "fixture.h"
+
 Show::Show(QString name, long override_id)
     // a Show's parent is always the App
     : QObject{QCoreApplication::instance()}
@@ -15,7 +17,8 @@ Show::Show(QString name, long override_id)
 }
 
 void Show::addNewFixture(){
-    qDebug() << "batman";
+    QPointer<Fixture> f = new Fixture{this, 0, 0, "Show::addNewFixture()"};
+    qDebug() << "fixture added";
 }
 
 Show::~Show()

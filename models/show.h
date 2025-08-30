@@ -6,6 +6,7 @@
 #include <QObject>
 #include <atomic>
 #include <QCoreApplication>
+#include <QPointer>
 
 class Show : public QObject
 {
