@@ -1,7 +1,7 @@
 #include "fixturegroup.h"
 
-FixtureGroup::FixtureGroup(Show *parent, QString name, long override_id)
-    : QObject{parent}
+FixtureGroup::FixtureGroup(Show* parent, QString name, long override_id)
+    : QObject{}
 {
     static std::atomic_long m_next_id = 1;
 

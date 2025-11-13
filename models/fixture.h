@@ -6,14 +6,14 @@
 #include <QObject>
 #include <atomic>
 
-#include "show.h"
+class Show; // forward
 
 class Fixture : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Fixture(Show *parent, int universe, int channel, QString name, long override_id = NULL);
+    explicit Fixture(Show* parent, int universe, int channel, QString name, long override_id = NULL);
     ~Fixture();
 
     long id() const;

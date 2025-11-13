@@ -3,6 +3,7 @@
 FixtureGroupItem::FixtureGroupItem(FixtureGroup* fg, Fixture* f)
     : QObject{fg}
 {
+    this->setParent(fg);
     m_fixturegroup = fg;
     m_fixture = f;
 }

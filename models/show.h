@@ -8,6 +8,9 @@
 #include <QCoreApplication>
 #include <QPointer>
 
+#include "fixture.h"
+#include "fixturegroup.h"
+
 class Show : public QObject
 {
     Q_OBJECT
@@ -26,6 +29,9 @@ public:
 private:
     long m_id;
     QString m_name;
+
+    QList<Fixture> fixtures;
+    QList<FixtureGroup> groups;
 
 signals:
 };

@@ -6,20 +6,20 @@
 #include <QString>
 #include <atomic>
 
-#include "show.h"
+class Show; // forward
 
 class FixtureGroup : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit FixtureGroup(Show *parent, QString name, long override_id = NULL);
+    explicit FixtureGroup(Show* parent, QString name, long override_id = NULL);
     ~FixtureGroup();
 
     long id() const;
 
     QString name() const;
-    void setName(const QString &newName);
+    void setName(const QString& newName);
 
 private:
     long m_id;

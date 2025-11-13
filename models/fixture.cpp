@@ -1,7 +1,7 @@
 #include "fixture.h"
 
-Fixture::Fixture(Show *parent, int universe, int channel, QString name, long override_id)
-    : QObject{parent}
+Fixture::Fixture(Show* parent, int universe, int channel, QString name, long override_id)
+    : QObject{}
 {
     static std::atomic_long m_next_id = 1;
     if (override_id) {
