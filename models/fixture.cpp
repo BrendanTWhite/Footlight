@@ -12,6 +12,7 @@ Fixture::Fixture(Show* parent, int universe, int channel, QString name, long ove
     m_universe = universe;
     m_channel = channel;
     m_name = name;
+    this->setObjectName(name);
 }
 
 Fixture::~Fixture()

@@ -11,6 +11,7 @@ FixtureGroup::FixtureGroup(Show* parent, QString name, long override_id)
 
     m_id = m_next_id++;
     m_name = name;
+    this->setObjectName(name);
 }
 
 FixtureGroup::~FixtureGroup()

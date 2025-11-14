@@ -6,6 +6,7 @@ FixtureGroupItem::FixtureGroupItem(FixtureGroup* fg, Fixture* f)
     this->setParent(fg);
     m_fixturegroup = fg;
     m_fixture = f;
+    this->setObjectName(fg->objectName() + ' ' + f->objectName());
 }
 
 FixtureGroupItem::~FixtureGroupItem()
