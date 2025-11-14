@@ -21,11 +21,14 @@ Show::Show(QString name, long override_id)
 
 void Show::addNewFixture(){
     ShowWindow* myShowWindow = qobject_cast<ShowWindow *>(this->parent());
-    QPointer<Fixture> f = new Fixture{this, 0, 0, "Show::addNewFixture()"};
 
-    myShowWindow->dumpObjectTree();
+    QPointer<Fixture> a = new Fixture{this, 0, 0, "Alfred"};
+    QPointer<Fixture> b = new Fixture{this, 0, 0, "Beatrice"};
+    QPointer<Fixture> c = new Fixture{this, 0, 0, "Chester"};
 
-    myShowWindow->update();
+    this->dumpObjectTree();
+
+    // myShowWindow->update();
     qDebug() << "fixture added";
 }
 
