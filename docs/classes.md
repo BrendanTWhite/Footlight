@@ -13,9 +13,9 @@ Links from one to another. Uses a solid line. Can have an open triangle / arrow 
 ```mermaid
 classDiagram
 
-    Show <--o Universe
+    ShowWindow -- Show
 
-    Show <--o FixtureDefinition
+    Show <--o Universe
 
     Show <--o Fixture
         Fixture <-- FixtureDefinition
@@ -30,5 +30,7 @@ classDiagram
 
     Show <--o Cue
          Cue <-- Scene
+
+    Show <--o FixtureDefinition
 
 ```
