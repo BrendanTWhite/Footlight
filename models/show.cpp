@@ -26,7 +26,7 @@ void Show::addNewFixture(){
     QPointer<Fixture> b = new Fixture{this, 0, 0, "Beatrice"};
     QPointer<Fixture> c = new Fixture{this, 0, 0, "Chester"};
 
-    this->dumpObjectTree();
+    // this->dumpObjectTree();
 
     // myShowWindow->update();
     qDebug() << "fixture added";
