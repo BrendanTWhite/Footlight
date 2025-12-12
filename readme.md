@@ -78,6 +78,8 @@ I will use the current OFL fixture format, but freeze it in place via a new expo
 Or possibly just copy the [DragronFrame plugin](https://open-fixture-library.org/about/plugins/dragonframe),
 which is the same thing but from a little while ago, and use that.
 
+Or heck, maybe don't bother, and just use the [GDTF format](https://gdtf-share.com) natively.
+
 ## File Format
 
 Just do the same as QLC+ maybe?
