@@ -12,7 +12,7 @@ add_compile_definitions(CMAKE_PROJECT_DESCRIPTION=${CMAKE_PROJECT_DESCRIPTION})
 add_compile_definitions(CMAKE_PROJECT_VERSION=${CMAKE_PROJECT_VERSION})
 
 cmake_minimum_required(VERSION 3.19)
-project(Footlight LANGUAGES CXX DESCRIPTION "Stage Lighting for Humans" VERSION 1)
+project(Footlight LANGUAGES CXX DESCRIPTION "Stage Lighting for Humans" VERSION 0.1)
 #project(${HF_APP_NAME} LANGUAGES CXX DESCRIPTION "${HF_APP_DESCRIPTION}" VERSION ${HF_APP_VERSION})
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
