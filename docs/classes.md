@@ -4,7 +4,7 @@ Class Diagram for main Footlight structures
 
 ## Aggregation
 
-"has a", eg a show "Has a" scene. Hollow diamond on a solid line. Diamond is on containing item's end of the line.
+"has a", eg a show "Has a" state. Hollow diamond on a solid line. Diamond is on containing item's end of the line.
 
 ## Association
 
@@ -24,11 +24,11 @@ classDiagram
     Show <--o FixtureGroup
         FixtureGroup <-- Fixture
     
-    Show <--o Scene
-        Scene <-- Fixture
-        Scene <-- FixtureGroup
+    Show <--o State
+        State <-- Fixture
+        State <-- FixtureGroup
 
     Show <--o Cue
-         Cue <-- Scene
+         Cue <-- State
 
 ```

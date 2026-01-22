@@ -50,17 +50,17 @@ GroupItem {
     ptr fixture
 }
 
-Show ||--o{ Scene : contains
-Scene {
+Show ||--o{ State : contains
+State {
     string code
     string name
 }
-Scene ||--o{ SceneItem : "contains"
-SceneItem {
-    enum sceneItemType
+State ||--o{ StateItem : "contains"
+StateItem {
+    enum stateItemType
     ptr fixture
     ptr group
-    ptr scene
+    ptr state
     array channelValues
 }
 
@@ -68,7 +68,7 @@ Show ||--o{ Cue : contains
 Cue {
     int seq
     double id
-    Scene scene
+    State state
     string cueText
     int delay
     int fade

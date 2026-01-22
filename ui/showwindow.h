@@ -37,7 +37,7 @@ private slots:
 
     void on_groupsAddButton_clicked();
 
-    void on_scenesAddButton_clicked();
+    void on_statesAddButton_clicked();
 
     void on_cuesAddButton_clicked();
 
