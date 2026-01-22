@@ -113,19 +113,19 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="scenesLayoutWidget">
-       <layout class="QVBoxLayout" name="scenesLayout">
+      <widget class="QWidget" name="statesLayoutWidget">
+       <layout class="QVBoxLayout" name="statesLayout">
         <item>
-         <layout class="QHBoxLayout" name="scenesButtonLayout">
+         <layout class="QHBoxLayout" name="statesButtonLayout">
           <item>
-           <widget class="QLabel" name="scenesLabel">
+           <widget class="QLabel" name="statesLabel">
             <property name="text">
-             <string>Scenes</string>
+             <string>States</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="scenesButtonSpacer">
+           <spacer name="statesButtonSpacer">
             <property name="orientation">
              <enum>Qt::Orientation::Horizontal</enum>
             </property>
@@ -138,7 +138,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QToolButton" name="scenesAddButton">
+           <widget class="QToolButton" name="statesAddButton">
             <property name="text">
              <string>Add...</string>
             </property>
@@ -147,7 +147,7 @@
          </layout>
         </item>
         <item>
-         <widget class="QTableView" name="scenesView">
+         <widget class="QTableView" name="statesView">
           <property name="alternatingRowColors">
            <bool>true</bool>
           </property>
@@ -280,7 +280,7 @@
     </property>
     <addaction name="actionShowFixtures"/>
     <addaction name="actionShowGroups"/>
-    <addaction name="actionShowScenes"/>
+    <addaction name="actionShowStates"/>
     <addaction name="actionShowCues"/>
     <addaction name="separator"/>
     <addaction name="actionLockWindow"/>
@@ -503,9 +503,12 @@
     <string>Ctrl+2</string>
    </property>
   </action>
-  <action name="actionShowScenes">
+  <action name="actionShowStates">
    <property name="text">
-    <string>Show Scenes</string>
+    <string>Show States</string>
+   </property>
+   <property name="toolTip">
+    <string>Show States</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+3</string>

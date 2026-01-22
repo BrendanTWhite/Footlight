@@ -76,13 +76,13 @@ or make copies of the pointed object.
 So - probs not ideal for me just now. The object is shared equally, with
 no one true owner.
 
-I want each object - each fixture, scene, cue, etc - to be owned by 
+I want each object - each fixture, state, cue, etc - to be owned by 
 exactly one other item. 
 
 Even if other items point to it, or it points to other items, 
 I want it to be *owned* by exactly one item.
 
-### Implicit Sharing 
+### Implicit Sharing
 
 Implicit Sharing is effectively completely separate objects. There is some 
 cleverness to share memory when copies are unchanged; 
@@ -121,7 +121,7 @@ except that by doing reference counting and not deleting the shared data object
 until the reference count is 0, they avoid the dangling pointer problem.
 
 
-## Regular C++ Pointers 
+## Regular C++ Pointers
 
 ```c_cpp
     #include <iostream>

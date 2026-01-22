@@ -7,7 +7,7 @@ multi platform, still supported on current hardware, and able to connect to anyt
 
 ## Ideology
 
-- Just one use case - an amateur theatre show. A play. A list of pre-defined cues, using pre-defined scenes.
+- Just one use case - an amateur theatre show. A play. A list of pre-defined cues, using pre-defined states.
 - Does NOT need to be able to run live lighting music shows. Just runs theatre performances.
 - It Just Works. Not complicated to use; not overly complicated to program.
 - New volunteer should be able to RUN a show with one minute's demo.
@@ -15,13 +15,13 @@ multi platform, still supported on current hardware, and able to connect to anyt
 
 ## One Important thing
 
-Each scene should be independent.
+Each state should be independent.
 
-- If I run a scene, it shouldn't matter what I ran before, or earlier that day, or last Tuesday.
-- If I run a scene, I want to see that scene exactly the same as every other time I run that scene.
-- Therefore, the software MUST NOT leave any fixtures the same as they were in a previous scene 
+- If I run a state, it shouldn't matter what I ran before, or earlier that day, or last Tuesday.
+- If I run a state, I want to see that state exactly the same as every other time I run that state.
+- Therefore, the software MUST NOT leave any fixtures the same as they were in a previous state 
         (at least, not if the master dimmer is > 0).
-- Every fixture must be how I set it FOR THAT SCENE.
+- Every fixture must be how I set it FOR THAT STATE.
 
 The only excption is that fixtures with master dimmer set to zero - ie they are showing no light at all -
 can be pre-set to the right location (or gobo etc) for a future cue in the cue list. Or left at
@@ -29,7 +29,7 @@ whatever they were before. Don't care ... PROVIDED the master dimmer is zero.
 
 ## Desired features
 
-- Blind mode - edit a scene while a different one is active on stage
+- Blind mode - edit a state while a different one is active on stage
 - Automatic move-in-black (user doesn't need to think about it)
 - All fixtures to 0% dimmer when not explicitly included
 - Control fixture movement by moving something on screen, not two sliders (With limits, so not TOO far)
@@ -52,8 +52,8 @@ whatever they were before. Don't care ... PROVIDED the master dimmer is zero.
 ## Simple interface
 
 - Set up fixtures
-- Set up scenes (from fixtures)
-- Set up cuelists (from scenes)
+- Set up states (from fixtures)
+- Set up cuelists (from states)
 
 ## Cue List
 

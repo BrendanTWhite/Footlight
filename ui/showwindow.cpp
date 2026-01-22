@@ -113,9 +113,9 @@ void ShowWindow::on_groupsAddButton_clicked()
 }
 
 
-void ShowWindow::on_scenesAddButton_clicked()
+void ShowWindow::on_statesAddButton_clicked()
 {
-    this->statusBar()->showMessage(tr("scenes AddButton clicked"), 2000);
+    this->statusBar()->showMessage(tr("states AddButton clicked"), 2000);
     this->window()->setWindowModified(true);
 }
 
