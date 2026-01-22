@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string/>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../resources/footlight.png</normaloff>../resources/footlight.png</iconset>
+  </property>
   <widget class="QWidget" name="mainWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
