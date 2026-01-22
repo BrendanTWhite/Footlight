@@ -19,10 +19,13 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
-    QList<Fixture *> fixtures() const;
+    // QList<Fixture *> fixtures() const;
 
 signals:
 
+
+public slots:
+    void addFixture(QString name);
 
 private:
 
@@ -34,6 +37,8 @@ private:
         {3,"Universe"},
         {4,"DMX"},
     });
+
+    QList<Fixture> local_fixtures;
 
 };
 

@@ -12,7 +12,7 @@ FixtureModel::~FixtureModel()
 
 int FixtureModel::rowCount(const QModelIndex & /*parent*/) const
 {
-    return fixtures().count();
+    return local_fixtures.count();
 }
 
 int FixtureModel::columnCount(const QModelIndex & /*parent*/) const
@@ -39,9 +39,24 @@ QVariant FixtureModel::headerData(int column_id, Qt::Orientation orientation, in
     return QVariant();
 }
 
-QList<Fixture *> FixtureModel::fixtures() const
-{
-    Show* s = qobject_cast<ShowWindow*>(this->parent())->getShow();
-    return s->findChildren<Fixture *>();
-}
+// QList<Fixture *> FixtureModel::fixtures() const
+// {
+//     Show* s = qobject_cast<ShowWindow*>(this->parent())->getShow();
+//     return s->findChildren<Fixture *>();
+// }
 
+void FixtureModel::addFixture(QString name)
+{
+    // insert new fixture in local_fixtures
+    // Fixture* f = new Fixture (this, 1, 1, "Potato");
+    // local_fixtures( Fixture(this, 1, 1, "Potato") );
+
+
+    beginInsertRows(QModelIndex(), local_fixtures.size(), local_fixtures.size());
+    local_fixtures.append(
+        {name, number}
+        );
+    endInsertRows();
+
+
+}
