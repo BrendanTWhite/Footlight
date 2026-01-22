@@ -24,7 +24,7 @@
        <property name="orientation">
         <enum>Qt::Orientation::Vertical</enum>
        </property>
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QWidget" name="fixturesLayoutWidget">
         <layout class="QVBoxLayout" name="fixturesLayout">
          <item>
           <layout class="QHBoxLayout" name="fixturesButtonLayout">
@@ -66,7 +66,7 @@
          </item>
         </layout>
        </widget>
-       <widget class="QWidget" name="layoutWidget">
+       <widget class="QWidget" name="groupsLayoutWidget">
         <layout class="QVBoxLayout" name="groupsLayout">
          <item>
           <layout class="QHBoxLayout" name="groupsButtonLayout">
@@ -109,7 +109,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="scenesLayoutWidget">
        <layout class="QVBoxLayout" name="scenesLayout">
         <item>
          <layout class="QHBoxLayout" name="scenesButtonLayout">
@@ -151,7 +151,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QWidget" name="cuesLayoutWidget">
        <layout class="QVBoxLayout" name="cuesLayout">
         <item>
          <layout class="QHBoxLayout" name="cuesButtonLayout">
