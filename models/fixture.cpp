@@ -1,7 +1,22 @@
 #include "fixture.h"
 
+Fixture::Fixture(QString name, QString universe, QString channel){
+
+    // static std::atomic_long m_next_id = 1;
+    // if (override_id) {
+    //     m_next_id = override_id;
+    // }
+    // m_id = m_next_id++;
+
+    m_universe = universe;
+    m_channel = channel;
+    m_name = name;
+
+}
+
+
 Fixture::Fixture(Show *parent, int universe, int channel, QString name, long override_id)
-    : QObject{parent}
+    // : QObject{parent}
 {
     static std::atomic_long m_next_id = 1;
     if (override_id) {
@@ -9,8 +24,8 @@ Fixture::Fixture(Show *parent, int universe, int channel, QString name, long ove
     }
     m_id = m_next_id++;
 
-    m_universe = universe;
-    m_channel = channel;
+    m_universe = QString::number(universe);
+    m_channel = QString::number(channel);
     m_name = name;
 }
 
@@ -20,37 +35,37 @@ Fixture::~Fixture()
 }
 
 
-long Fixture::id() const
-{
-    return m_id;
-}
+// long Fixture::id() const
+// {
+//     return m_id;
+// }
 
-QString Fixture::name() const
-{
-    return m_name;
-}
+// QString Fixture::name() const
+// {
+//     return m_name;
+// }
 
-void Fixture::setName(const QString &newName)
-{
-    m_name = newName;
-}
+// void Fixture::setName(const QString &newName)
+// {
+//     m_name = newName;
+// }
 
-int Fixture::universe() const
-{
-    return m_universe;
-}
+// int Fixture::universe() const
+// {
+//     return m_universe;
+// }
 
-void Fixture::setUniverse(int newUniverse)
-{
-    m_universe = newUniverse;
-}
+// void Fixture::setUniverse(int newUniverse)
+// {
+//     m_universe = newUniverse;
+// }
 
-int Fixture::channel() const
-{
-    return m_channel;
-}
+// int Fixture::channel() const
+// {
+//     return m_channel;
+// }
 
-void Fixture::setChannel(int newChannel)
-{
-    m_channel = newChannel;
-}
+// void Fixture::setChannel(int newChannel)
+// {
+//     m_channel = newChannel;
+// }

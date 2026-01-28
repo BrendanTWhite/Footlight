@@ -3,15 +3,24 @@
 
 #include <QAbstractTableModel>
 #include <QMultiMap>
+#include <QString>
+#include <QList>
+#include <QVariant>
+#include <QBrush>
 
+#include "../ui/showwindow.h"
 #include "../models/fixture.h"
+
 
 class FixtureModel : public QAbstractTableModel
 {
     Q_OBJECT
 
 public:
-    explicit FixtureModel(QObject *parent);
+    explicit FixtureModel(
+        QList<Fixture>& list_ref_in_model_constructor,
+        ShowWindow *parent
+                          );
     ~FixtureModel();
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
@@ -19,20 +28,30 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
 
-    QList<Fixture *> fixtures() const;
+    void addFixture(const QString &name, const QString &universe, const QString &channel);
+    void removeFixture(int row);
+    bool setData(
+        const QModelIndex &index, const QVariant &value, int role = Qt::EditRole
+        ) override;
+
+
+    // QList<Fixture *> fixtures() const;
 
 signals:
 
 
 private:
 
+    QList<Fixture>& list_ref_in_model;
+    // model has a REFERENCE to the QList
+
     QMultiMap<int,QString> columnMap = QMultiMap<int,QString>({
         // Indexes must be zero-based incrementing integers
         {0,"Name"},
-        {1,"Area"},
-        {2,"Type"},
-        {3,"Universe"},
-        {4,"DMX"},
+        {1,"Universe"},
+        {2,"DMX Channel"},
+        // {3,"Area"},
+        // {4,"Type"},
     });
 
 };

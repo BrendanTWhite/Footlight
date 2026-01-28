@@ -10,7 +10,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QtDebug>
-#include <QPointer>
+// #include <QPointer>
 
 #include <QFileDialog>
 #include <QDir>
@@ -58,11 +58,11 @@ int main(int argc, char *argv[])
 
 
     // create a dummy show
-    QPointer<Show> show = new Show{"Godot Finally Arrives"};
+    // QPointer<Show> show = new Show{"Godot Finally Arrives"};
     // QPointer<Show> show2 = new Show{"Romeo & Juliet"};
 
-    qDebug() << "----------------------------------- ";
-    qDebug() << "Show" << show->id() << show->name();
+    // qDebug() << "----------------------------------- ";
+    // qDebug() << "Show" << show->id() << show->name();
     // qDebug() << "Show" << show2->id() << show2->name();
 
     // // Create a QList of fixtures
@@ -94,16 +94,16 @@ int main(int argc, char *argv[])
     //     qDebug() << "FixtureGroup" << fixtureGroup->id() << fixtureGroup->name();
     // }
 
-    qDebug() << "----------------------------------- ";
-    // Put fixtures in the groups
-    QPointer<FixtureGroup> fg = new FixtureGroup{show, "my fixture group"};
-    QPointer<Fixture> f = new Fixture{show, 0, 0, "my fixture"};
+    // qDebug() << "----------------------------------- ";
+    // // Put fixtures in the groups
+    // QPointer<FixtureGroup> fg = new FixtureGroup{show, "my fixture group"};
+    // QPointer<Fixture> f = new Fixture{show, 0, 0, "my fixture"};
     // qDebug() << "Fixture" << f->id() << "U" << f->universe() << "dmx" << f->channel() << f->name();
     // qDebug() << "FixtureGroup" << fg->id() << fg->name();
 
-    QPointer<FixtureGroupItem> fgi = new FixtureGroupItem(fg, f);
-    qDebug() << "FGI FG:" << fgi->fixtureGroupName()
-             << "F: " << fgi->fixtureName();
+    // QPointer<FixtureGroupItem> fgi = new FixtureGroupItem(fg, f);
+    // qDebug() << "FGI FG:" << fgi->fixtureGroupName()
+    //          << "F: " << fgi->fixtureName();
 
     // QPointer<FixtureGroupItem> fgi2 = new FixtureGroupItem(
     //     fixtureGroups[1],
@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
     // qDebug() << "FGI2 FG:" << fgi2->fixtureGroupName()
     //          << "F: " << fgi2->fixtureName();
 
-    qDebug() << "----------------------------------- ";
+    // qDebug() << "----------------------------------- ";
 
     // // ask user to select a .hff file
     // QString fileName = QFileDialog::getOpenFileName(

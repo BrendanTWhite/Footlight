@@ -6,7 +6,7 @@
 #include <QObject>
 #include <atomic>
 #include <QCoreApplication>
-#include <QPointer>
+// #include <QPointer>
 
 class Show : public QObject
 {
@@ -21,7 +21,7 @@ public:
     QString name() const;
     void setName(const QString &newName);
 
-    void addNewFixture();
+    // void addNewFixture();
 
 private:
     long m_id;

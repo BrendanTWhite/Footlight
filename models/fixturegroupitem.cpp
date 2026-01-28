@@ -24,7 +24,7 @@ QString FixtureGroupItem::fixtureGroupName()
 QString FixtureGroupItem::fixtureName()
 {
     if (this->m_fixture) {
-        return this->m_fixture->name();
+        return this->m_fixture->m_name;
     } else {
         return "Can't find that fixture";
     }

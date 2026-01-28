@@ -18,12 +18,12 @@ Show::Show(QString name, long override_id)
     m_name = name;
 }
 
-void Show::addNewFixture(){
-    QPointer<Fixture> f = new Fixture{this, 0, 0, "Show::addNewFixture()"};
-    ShowWindow* myShowWindow = qobject_cast<ShowWindow *>(this->parent());
-    myShowWindow->update();
-    qDebug() << "fixture added";
-}
+// void Show::addNewFixture(){
+//     QPointer<Fixture> f = new Fixture{this, 0, 0, "Show::addNewFixture()"};
+//     ShowWindow* myShowWindow = qobject_cast<ShowWindow *>(this->parent());
+//     myShowWindow->update();
+//     qDebug() << "fixture added";
+// }
 
 Show::~Show()
 {

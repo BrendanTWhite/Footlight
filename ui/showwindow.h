@@ -2,15 +2,20 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QList>
 #include <QItemSelectionModel>
-#include <QPointer>
+// #include <QPointer>
 
-#include "fixturemodel.h"
+// #include "fixturemodel.h"
 #include "../models/show.h"
+
+class FixtureModel; // forward declaration, to allow ptrs & refs
+class Fixture; // forward declaration, to allow ptrs & refs
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class ShowWindow;
+    class ShowWindow;
 }
 QT_END_NAMESPACE
 
@@ -24,7 +29,9 @@ public:
 
     ~ShowWindow();
 
-    QPointer<Show> getShow() const;
+    // QList<Fixture> getFixtures() const; // not used
+    // void setFixtures(const QList<Fixture> &newFixtures); // not used
+
 
 private slots:
     void onSelectionChanged(const QItemSelection& selected, const QItemSelection& deselected);
@@ -44,10 +51,17 @@ private slots:
     void on_actionOpen_triggered();
 
 private:
-    ShowWindow(QPointer<Show> show);
+    ShowWindow(
+        // QPointer<Show> show
+               );
 
-    Ui::ShowWindow *ui;
-    QPointer<Show> m_show;
-    FixtureModel m_fixture_model;
+    Ui::ShowWindow* ui;
+    // QPointer<Show> m_show;
+    // FixtureModel m_fixture_model;
+
+    FixtureModel* model_ptr_in_window; // why both
+    QList<Fixture> list_in_window;     // of these?
+
+
 };
 #endif // MAINWINDOW_H
