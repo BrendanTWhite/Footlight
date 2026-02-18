@@ -11,9 +11,18 @@ add_compile_definitions(CMAKE_PROJECT_NAME=${CMAKE_PROJECT_NAME})
 add_compile_definitions(CMAKE_PROJECT_DESCRIPTION=${CMAKE_PROJECT_DESCRIPTION})
 add_compile_definitions(CMAKE_PROJECT_VERSION=${CMAKE_PROJECT_VERSION})
 
+# Get the Unix time, ie seconds since UTC midnight on 1 Jan 1970
+string(TIMESTAMP unix_time "%s")
+
 cmake_minimum_required(VERSION 3.19)
-project(Footlight LANGUAGES CXX DESCRIPTION "Stage Lighting for Humans" VERSION 0.1)
+project(Footlight LANGUAGES CXX DESCRIPTION "Stage Lighting for Humans" VERSION ${unix_time})
+# Note - Amore can't cope with dots in VERSION, see https://phpc.social/@Brendan/116011766539206652
 #project(${HF_APP_NAME} LANGUAGES CXX DESCRIPTION "${HF_APP_DESCRIPTION}" VERSION ${HF_APP_VERSION})
+
+#set(MACOSX_FRAMEWORK_INFO_PLIST "resources/MacOSXFrameworkInfo.plist.in") # doesn't seem to work
+set(CMAKE_OSX_DEPLOYMENT_TARGET "13.0") # shouldn't need to hard-code this...
+set(MACOSX_BUNDLE_SHORT_VERSION_STRING "0.1.006") # sets CFBundleShortVersionString but clears CFBundleVersion!
+set(MACOSX_BUNDLE_BUNDLE_VERSION ${unix_time})    # sets CFBundleVersion again
 
 find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
 
@@ -39,6 +48,8 @@ qt_standard_project_setup()
     set(app_icon_macos "${CMAKE_CURRENT_SOURCE_DIR}/resources/footlight.icns")
     set_source_files_properties(${app_icon_macos} PROPERTIES
            MACOSX_PACKAGE_LOCATION "Resources")
+
+
 
 #! [appicon_macOS]
 
@@ -67,6 +78,14 @@ qt_add_translations(
     TARGETS Footlight
     TS_FILES Footlight_en_AU.ts
 )
+
+set(CMAKE_MACOSX_BUNDLE TRUE)
+set_target_properties(Footlight PROPERTIES
+    MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/resources/Info.plist"
+)
+# Need to un-comment this, then
+# add all the old stuff back in...
+# ... or can we just keep the generated Info.plist, and add (custom) additional keys?
 
 target_link_libraries(Footlight
     PRIVATE

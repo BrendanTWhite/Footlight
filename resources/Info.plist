@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSHumanReadableCopyright</key>
+	<string></string>
+	<key>SUFeedURL</key>
+	<string>https://api.amore.computer/v1/apps/com.thespia.Footlight/appcast.xml</string>
+	<key>SUPublicEDKey</key>
+	<string>CamhDZY5XjZkREe1bQPh6H3V6MGCY+4iXjs6Z8Hd0t8=</string>
+</dict>
+</plist>
