@@ -1,0 +1,39 @@
+erDiagram
+
+    fixture_type {
+        int id
+        string model
+        string manufacturer
+    }
+
+    fixture {
+        int id
+        string name
+        type name
+    }
+
+    fixture_type ||--o{ fixture : of
+
+    cue {
+        int id
+        string seq
+        string prompt
+    }
+
+    state {
+        int id
+        string name
+        int seq
+    }
+
+    cue }o--|| state : contains
+
+    state_fixture {
+        int id
+        int state_id
+        int fixture_id    
+    }
+
+    fixture ||--o{ state_fixture : for
+    state ||--o{ state_fixture : has
+
