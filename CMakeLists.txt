@@ -15,7 +15,7 @@ cmake_minimum_required(VERSION 3.19)
 project(Footlight LANGUAGES CXX DESCRIPTION "Stage Lighting for Humans" VERSION 0.1)
 #project(${HF_APP_NAME} LANGUAGES CXX DESCRIPTION "${HF_APP_DESCRIPTION}" VERSION ${HF_APP_VERSION})
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets LinguistTools Sql)
 
 if (ANDROID)
     message(FATAL_ERROR "This project cannot be built on Android (yet).")
@@ -72,6 +72,7 @@ target_link_libraries(Footlight
     PRIVATE
         Qt::Core
         Qt::Widgets
+        Qt6::Sql
 )
 
 include(GNUInstallDirs)
