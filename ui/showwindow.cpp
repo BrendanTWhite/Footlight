@@ -10,6 +10,10 @@
 #include <QMessageBox>
 #include <QInputDialog>
 
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
+#include <QUuid>
 
 ShowWindow::ShowWindow(
     // QPointer<Show> show
@@ -29,6 +33,96 @@ ShowWindow::ShowWindow(
     // connect(selectionModel, &QItemSelectionModel::selectionChanged,
     //         this, &ShowWindow::onSelectionChanged);
 
+
+
+    // database playground
+    //     from https://cengizhanvarli.medium.com/qt-sql-operations-b9031dfc1a20
+
+    connection_name = QUuid::createUuid().toString(QUuid::WithoutBraces);
+
+    // https://doc.qt.io/qt-6/qsqldatabase.html#addDatabase
+    // This sets the connectionName. The database connection is referred to by connectionName.
+    // If connectionName is not specified, the new connection becomes the default connection
+    // for the application, and subsequent calls to database() without the connection name argument
+    // will return the default connection.
+    // If a connectionName is provided here, use database(connectionName) to retrieve the connection.
+    db = QSqlDatabase::addDatabase("QSQLITE", connection_name);
+
+    // https://doc.qt.io/qt-6/qsqldatabase.html#setDatabaseName
+    // The database name is usually the filename on disk.
+    // But if the database name is set to an empty string,
+    // it creates a temporary database, which disappears on close().
+
+    db.setDatabaseName(QString(""));
+
+    if (!db.open()) {
+        qDebug() << "Cannot open database:" << db.lastError().text();
+        // return -1;
+    }
+    qDebug() << "Database connected - " + db.connectionName();
+
+    QSqlQuery query(db);
+
+
+    if (!query.exec(
+            "    create table if not exists fixture_type ("
+            "        id integer,"
+            "        model varchar,"
+            "        manufacturer varchar,"
+            "        primary key (id)"
+            "        );"
+
+        )) {
+        qDebug() << "Error:" << query.lastError().text();
+    }
+
+    if (!query.exec(
+
+            "insert into fixture_type "
+            "	(id, model, manufacturer) "
+            "values "
+            "	(1, 'ParCan', 'Acme'),"
+            "	(2, 'Profile', 'Acme'),"
+            "	(3, 'Follow Spot', 'Acme')"
+
+            )) {
+        qDebug() << "Error:" << query.lastError().text();
+    }
+
+    if (!query.exec(
+
+
+            "    create table if not exists fixture ("
+            "        id integer,"
+            "        fixture_type_id integer not null,"
+
+            "        name varchar not null, "
+            "        universe varchar, "
+            "        dmx_channel varchar, "
+
+            "        foreign key (fixture_type_id) references fixture_type(id),"
+            "        primary key (id)"
+            "        );"
+
+        )) {
+        qDebug() << "Error:" << query.lastError().text();
+    }
+
+    if (!query.exec(
+
+            "insert into fixture "
+            "	(id, name, fixture_type_id, universe, dmx_channel) "
+            "values "
+            "	(1, 'OP Wash', 1, 1, 12),"
+            "	(2, 'C Wash',  1, 1, 23),"
+            "	(3, 'P Wash',  1, 1, 34),"
+            "	(4, 'OP Spot', 3, 1, 45),"
+            "	(5, 'P Spot',  3, 1, 56)"
+
+        )) {
+        qDebug() << "Error:" << query.lastError().text();
+    }
+
 }
 
 // QPointer<Show> ShowWindow::getShow() const
@@ -38,6 +132,8 @@ ShowWindow::ShowWindow(
 
 ShowWindow::~ShowWindow()
 {
+    qDebug() << "Closing connection - " + db.connectionName();
+    db.close();
     delete ui;
 }
 

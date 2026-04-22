@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QList>
 #include <QItemSelectionModel>
+#include <QSqlDatabase>
+
 // #include <QPointer>
 
 // #include "fixturemodel.h"
@@ -58,6 +60,24 @@ private:
     Ui::ShowWindow* ui;
     // QPointer<Show> m_show;
     // FixtureModel m_fixture_model;
+
+    QSqlDatabase db;
+    QString connection_name;
+    // A database connection must only be used from within
+    // the thread that it's associated with, which is generally
+    // the thread that created it.
+    // Moving a connection into another thread can be done with
+    // QSqlDatabase::moveToThread().
+    // See https://doc.qt.io/qt-6/threads-modules.html#threads-and-the-sql-module
+    //
+    // to re-use the existing connection
+    // (in the same thread)
+    // just use the existing db member variable.
+    //
+    // To get a new connection to this db
+    // (in any thread)
+    // use https://doc.qt.io/qt-6/qsqldatabase.html#database
+    // with this connection_name
 
     FixtureModel* model_ptr_in_window; // why both
     QList<Fixture> list_in_window;     // of these?
