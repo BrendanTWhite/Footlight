@@ -84,5 +84,7 @@ Or heck, maybe don't bother, and just use the [GDTF format](https://gdtf-share.c
 
 Just do the same as QLC+ maybe?
 
-No. Do something simple with QT's JSON stuff,
-like [this demo](https://doc.qt.io/qt-6/qtcore-serialization-savegame-example.html).
+Or do something simple with QT's JSON stuff,
+like [this demo](https://doc.qt.io/qt-6/qtcore-serialization-savegame-example.html)?
+
+Or even don't bother, and just save it as a Sqlite file?
