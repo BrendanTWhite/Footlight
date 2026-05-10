@@ -5,6 +5,8 @@ A stage lighting control app for regular people.
 The plan is to be similar to PC stage, with the same simplicity of use, just
 multi platform, still supported on current hardware, and able to connect to anything Art-net.
 
+This project is licensed under the terms of the [GPL-3.0 license](LICENSE).
+
 ## Ideology
 
 - Just one use case - an amateur theatre show. A play. A list of pre-defined cues, using pre-defined states.
