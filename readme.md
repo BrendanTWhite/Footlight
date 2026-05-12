@@ -4,6 +4,7 @@ A stage lighting control app for regular people.
 
 The plan is to be similar to PC stage, with the same simplicity of use, just
 multi platform, still supported on current hardware, and able to connect to anything Art-net.
+See the [Footlight blog](https://blog.footlight.app) for more.
 
 This project is licensed under the terms of the [GPL-3.0 license](LICENSE).
 
